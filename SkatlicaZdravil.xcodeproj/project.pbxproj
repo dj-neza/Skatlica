@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9743A0420A9F9C400784CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A0320A9F9C400784CD9 /* AppDelegate.swift */; };
+		E9743A0620A9F9C400784CD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A0520A9F9C400784CD9 /* ViewController.swift */; };
+		E9743A0920A9F9C400784CD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0720A9F9C400784CD9 /* Main.storyboard */; };
+		E9743A0B20A9F9C600784CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0A20A9F9C600784CD9 /* Assets.xcassets */; };
+		E9743A0E20A9F9C600784CD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */; };
+		E9743A1920A9F9C600784CD9 /* SkatlicaZdravilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9743A1520A9F9C600784CD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E97439F820A9F9C400784CD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97439FF20A9F9C400784CD9;
+			remoteInfo = SkatlicaZdravil;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkatlicaZdravil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9743A0320A9F9C400784CD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9743A0520A9F9C400784CD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9743A0820A9F9C400784CD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9743A0A20A9F9C600784CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9743A0D20A9F9C600784CD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9743A0F20A9F9C600784CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkatlicaZdravilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkatlicaZdravilTests.swift; sourceTree = "<group>"; };
+		E9743A1A20A9F9C600784CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E97439FD20A9F9C400784CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9743A1120A9F9C600784CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E97439F720A9F9C400784CD9 = {
+			isa = PBXGroup;
+			children = (
+				E9743A0220A9F9C400784CD9 /* SkatlicaZdravil */,
+				E9743A1720A9F9C600784CD9 /* SkatlicaZdravilTests */,
+				E9743A0120A9F9C400784CD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9743A0120A9F9C400784CD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */,
+				E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9743A0220A9F9C400784CD9 /* SkatlicaZdravil */ = {
+			isa = PBXGroup;
+			children = (
+				E9743A0320A9F9C400784CD9 /* AppDelegate.swift */,
+				E9743A0520A9F9C400784CD9 /* ViewController.swift */,
+				E9743A0720A9F9C400784CD9 /* Main.storyboard */,
+				E9743A0A20A9F9C600784CD9 /* Assets.xcassets */,
+				E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */,
+				E9743A0F20A9F9C600784CD9 /* Info.plist */,
+			);
+			path = SkatlicaZdravil;
+			sourceTree = "<group>";
+		};
+		E9743A1720A9F9C600784CD9 /* SkatlicaZdravilTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */,
+				E9743A1A20A9F9C600784CD9 /* Info.plist */,
+			);
+			path = SkatlicaZdravilTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E97439FF20A9F9C400784CD9 /* SkatlicaZdravil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9743A1D20A9F9C600784CD9 /* Build configuration list for PBXNativeTarget "SkatlicaZdravil" */;
+			buildPhases = (
+				E97439FC20A9F9C400784CD9 /* Sources */,
+				E97439FD20A9F9C400784CD9 /* Frameworks */,
+				E97439FE20A9F9C400784CD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkatlicaZdravil;
+			productName = SkatlicaZdravil;
+			productReference = E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9743A1320A9F9C600784CD9 /* SkatlicaZdravilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9743A2020A9F9C600784CD9 /* Build configuration list for PBXNativeTarget "SkatlicaZdravilTests" */;
+			buildPhases = (
+				E9743A1020A9F9C600784CD9 /* Sources */,
+				E9743A1120A9F9C600784CD9 /* Frameworks */,
+				E9743A1220A9F9C600784CD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9743A1620A9F9C600784CD9 /* PBXTargetDependency */,
+			);
+			name = SkatlicaZdravilTests;
+			productName = SkatlicaZdravilTests;
+			productReference = E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E97439F820A9F9C400784CD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Neza;
+				TargetAttributes = {
+					E97439FF20A9F9C400784CD9 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					E9743A1320A9F9C600784CD9 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = E97439FF20A9F9C400784CD9;
+					};
+				};
+			};
+			buildConfigurationList = E97439FB20A9F9C400784CD9 /* Build configuration list for PBXProject "SkatlicaZdravil" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E97439F720A9F9C400784CD9;
+			productRefGroup = E9743A0120A9F9C400784CD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E97439FF20A9F9C400784CD9 /* SkatlicaZdravil */,
+				E9743A1320A9F9C600784CD9 /* SkatlicaZdravilTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E97439FE20A9F9C400784CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9743A0E20A9F9C600784CD9 /* LaunchScreen.storyboard in Resources */,
+				E9743A0B20A9F9C600784CD9 /* Assets.xcassets in Resources */,
+				E9743A0920A9F9C400784CD9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9743A1220A9F9C600784CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E97439FC20A9F9C400784CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9743A0620A9F9C400784CD9 /* ViewController.swift in Sources */,
+				E9743A0420A9F9C400784CD9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9743A1020A9F9C600784CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9743A1920A9F9C600784CD9 /* SkatlicaZdravilTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9743A1620A9F9C600784CD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97439FF20A9F9C400784CD9 /* SkatlicaZdravil */;
+			targetProxy = E9743A1520A9F9C600784CD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E9743A0720A9F9C400784CD9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9743A0820A9F9C400784CD9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9743A0D20A9F9C600784CD9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9743A1B20A9F9C600784CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E9743A1C20A9F9C600784CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9743A1E20A9F9C600784CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = SkatlicaZdravil/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9743A1F20A9F9C600784CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = SkatlicaZdravil/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E9743A2120A9F9C600784CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = SkatlicaZdravilTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkatlicaZdravil.app/SkatlicaZdravil";
+			};
+			name = Debug;
+		};
+		E9743A2220A9F9C600784CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = SkatlicaZdravilTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkatlicaZdravil.app/SkatlicaZdravil";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E97439FB20A9F9C400784CD9 /* Build configuration list for PBXProject "SkatlicaZdravil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9743A1B20A9F9C600784CD9 /* Debug */,
+				E9743A1C20A9F9C600784CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9743A1D20A9F9C600784CD9 /* Build configuration list for PBXNativeTarget "SkatlicaZdravil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9743A1E20A9F9C600784CD9 /* Debug */,
+				E9743A1F20A9F9C600784CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9743A2020A9F9C600784CD9 /* Build configuration list for PBXNativeTarget "SkatlicaZdravilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9743A2120A9F9C600784CD9 /* Debug */,
+				E9743A2220A9F9C600784CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E97439F820A9F9C400784CD9 /* Project object */;
+}
