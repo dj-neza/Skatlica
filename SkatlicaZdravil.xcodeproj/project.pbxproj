@@ -7,12 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3E6AFAD725E0A1D0FD0012 /* Pods_SkatlicaZdravil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */; };
+		E93CDDFF20AD60BF00DBFA48 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDDFE20AD60BF00DBFA48 /* ProfileTableViewCell.swift */; };
+		E93CDE0320AD73CA00DBFA48 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0220AD73CA00DBFA48 /* ProfileTableViewController.swift */; };
+		E93CDE0520AD74F300DBFA48 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0420AD74F300DBFA48 /* Profile.swift */; };
+		E93CDE0720ADA60800DBFA48 /* ZdraviloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0620ADA60800DBFA48 /* ZdraviloTableViewCell.swift */; };
+		E93CDE0B20ADAAFD00DBFA48 /* Zdravilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0A20ADAAFD00DBFA48 /* Zdravilo.swift */; };
+		E93CDE0D20ADB13600DBFA48 /* ZdraviloTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0C20ADB13600DBFA48 /* ZdraviloTableViewController.swift */; };
+		E93CDE0F20AEF6E000DBFA48 /* DodajanjeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0E20AEF6E000DBFA48 /* DodajanjeViewController.swift */; };
+		E93CDE1120AF159400DBFA48 /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE1020AF159400DBFA48 /* PagesViewController.swift */; };
+		E94CAF8820BC2584000D088A /* simple.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8720BC2584000D088A /* simple.json */; };
+		E94CAF8C20BC2EE5000D088A /* warfarin.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8920BC2EE5000D088A /* warfarin.json */; };
+		E94CAF8D20BC2EE5000D088A /* controlDrug.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8A20BC2EE5000D088A /* controlDrug.json */; };
+		E94CAF8E20BC2EE5000D088A /* tapering.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8B20BC2EE5000D088A /* tapering.json */; };
+		E94D290C20B886C700FDB7BA /* PillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D290B20B886C700FDB7BA /* PillViewController.swift */; };
+		E962423520B833E2000DA49B /* NavodilaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962423420B833E2000DA49B /* NavodilaViewController.swift */; };
+		E9685EE220BCC5FF009DA1D7 /* PacientiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */; };
+		E9685EE420BCC93F009DA1D7 /* AdhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */; };
+		E9685EE620BDEA16009DA1D7 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = E9685EE520BDEA16009DA1D7 /* database.json */; };
 		E9743A0420A9F9C400784CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A0320A9F9C400784CD9 /* AppDelegate.swift */; };
 		E9743A0620A9F9C400784CD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A0520A9F9C400784CD9 /* ViewController.swift */; };
 		E9743A0920A9F9C400784CD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0720A9F9C400784CD9 /* Main.storyboard */; };
 		E9743A0B20A9F9C600784CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0A20A9F9C600784CD9 /* Assets.xcassets */; };
 		E9743A0E20A9F9C600784CD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */; };
 		E9743A1920A9F9C600784CD9 /* SkatlicaZdravilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */; };
+		E99631C620B43A20000CFE2A /* adherence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99631C520B43A20000CFE2A /* adherence.storyboard */; };
+		E99631C820B4510F000CFE2A /* DanesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */; };
+		E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */; };
+		E9FFCF2820B55CDD00EDCA23 /* TodayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2720B55CDD00EDCA23 /* TodayPageViewController.swift */; };
+		E9FFCF2A20B5604700EDCA23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2920B5604700EDCA23 /* UIView.swift */; };
+		E9FFCF2C20B5615600EDCA23 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2B20B5615600EDCA23 /* HeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +50,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkatlicaZdravil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F9402280FDE85E5E5D951A /* Pods-SkatlicaZdravil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkatlicaZdravil.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil.release.xcconfig"; sourceTree = "<group>"; };
+		E3668738CDB428314A18B70E /* Pods-SkatlicaZdravil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkatlicaZdravil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil.debug.xcconfig"; sourceTree = "<group>"; };
+		E93CDDFE20AD60BF00DBFA48 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E93CDE0220AD73CA00DBFA48 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		E93CDE0420AD74F300DBFA48 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E93CDE0620ADA60800DBFA48 /* ZdraviloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZdraviloTableViewCell.swift; sourceTree = "<group>"; };
+		E93CDE0A20ADAAFD00DBFA48 /* Zdravilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zdravilo.swift; sourceTree = "<group>"; };
+		E93CDE0C20ADB13600DBFA48 /* ZdraviloTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZdraviloTableViewController.swift; sourceTree = "<group>"; };
+		E93CDE0E20AEF6E000DBFA48 /* DodajanjeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodajanjeViewController.swift; sourceTree = "<group>"; };
+		E93CDE1020AF159400DBFA48 /* PagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
+		E94CAF8720BC2584000D088A /* simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple.json; sourceTree = "<group>"; };
+		E94CAF8920BC2EE5000D088A /* warfarin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = warfarin.json; sourceTree = "<group>"; };
+		E94CAF8A20BC2EE5000D088A /* controlDrug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = controlDrug.json; sourceTree = "<group>"; };
+		E94CAF8B20BC2EE5000D088A /* tapering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tapering.json; sourceTree = "<group>"; };
+		E94D290B20B886C700FDB7BA /* PillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillViewController.swift; sourceTree = "<group>"; };
+		E962423420B833E2000DA49B /* NavodilaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavodilaViewController.swift; sourceTree = "<group>"; };
+		E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientiTableViewController.swift; sourceTree = "<group>"; };
+		E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhViewController.swift; sourceTree = "<group>"; };
+		E9685EE520BDEA16009DA1D7 /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkatlicaZdravil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9743A0320A9F9C400784CD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9743A0520A9F9C400784CD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +80,12 @@
 		E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkatlicaZdravilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkatlicaZdravilTests.swift; sourceTree = "<group>"; };
 		E9743A1A20A9F9C600784CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E99631C520B43A20000CFE2A /* adherence.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = adherence.storyboard; sourceTree = "<group>"; };
+		E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewController.swift; sourceTree = "<group>"; };
+		E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewCell.swift; sourceTree = "<group>"; };
+		E9FFCF2720B55CDD00EDCA23 /* TodayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPageViewController.swift; sourceTree = "<group>"; };
+		E9FFCF2920B5604700EDCA23 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E9FFCF2B20B5615600EDCA23 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3E6AFAD725E0A1D0FD0012 /* Pods_SkatlicaZdravil.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +107,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B640105DBCE7EBF6412BBF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3668738CDB428314A18B70E /* Pods-SkatlicaZdravil.debug.xcconfig */,
+				90F9402280FDE85E5E5D951A /* Pods-SkatlicaZdravil.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C12C6A4CE68D9E7C6A7DE93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E93CDE1220AF1E6900DBFA48 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E93CDE1020AF159400DBFA48 /* PagesViewController.swift */,
+				E93CDE0E20AEF6E000DBFA48 /* DodajanjeViewController.swift */,
+				E93CDE0620ADA60800DBFA48 /* ZdraviloTableViewCell.swift */,
+				E93CDE0C20ADB13600DBFA48 /* ZdraviloTableViewController.swift */,
+				E93CDDFE20AD60BF00DBFA48 /* ProfileTableViewCell.swift */,
+				E93CDE0220AD73CA00DBFA48 /* ProfileTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E93CDE1320AF1E7B00DBFA48 /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E9743A0720A9F9C400784CD9 /* Main.storyboard */,
+				E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */,
+				E99631C520B43A20000CFE2A /* adherence.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
+		E93CDE1420AF1E9800DBFA48 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E9685EE520BDEA16009DA1D7 /* database.json */,
+				E94CAF8A20BC2EE5000D088A /* controlDrug.json */,
+				E94CAF8B20BC2EE5000D088A /* tapering.json */,
+				E94CAF8920BC2EE5000D088A /* warfarin.json */,
+				E94CAF8720BC2584000D088A /* simple.json */,
+				E93CDE0420AD74F300DBFA48 /* Profile.swift */,
+				E93CDE0A20ADAAFD00DBFA48 /* Zdravilo.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E97439F720A9F9C400784CD9 = {
 			isa = PBXGroup;
 			children = (
 				E9743A0220A9F9C400784CD9 /* SkatlicaZdravil */,
 				E9743A1720A9F9C600784CD9 /* SkatlicaZdravilTests */,
 				E9743A0120A9F9C400784CD9 /* Products */,
+				3B640105DBCE7EBF6412BBF5 /* Pods */,
+				9C12C6A4CE68D9E7C6A7DE93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +184,22 @@
 		E9743A0220A9F9C400784CD9 /* SkatlicaZdravil */ = {
 			isa = PBXGroup;
 			children = (
+				E9FFCF2920B5604700EDCA23 /* UIView.swift */,
+				E9743A0F20A9F9C600784CD9 /* Info.plist */,
 				E9743A0320A9F9C400784CD9 /* AppDelegate.swift */,
 				E9743A0520A9F9C400784CD9 /* ViewController.swift */,
-				E9743A0720A9F9C400784CD9 /* Main.storyboard */,
+				E93CDE1420AF1E9800DBFA48 /* Data */,
+				E93CDE1320AF1E7B00DBFA48 /* Stroyboards */,
+				E93CDE1220AF1E6900DBFA48 /* Controllers */,
 				E9743A0A20A9F9C600784CD9 /* Assets.xcassets */,
-				E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */,
-				E9743A0F20A9F9C600784CD9 /* Info.plist */,
+				E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */,
+				E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */,
+				E9FFCF2720B55CDD00EDCA23 /* TodayPageViewController.swift */,
+				E9FFCF2B20B5615600EDCA23 /* HeaderCollectionReusableView.swift */,
+				E962423420B833E2000DA49B /* NavodilaViewController.swift */,
+				E94D290B20B886C700FDB7BA /* PillViewController.swift */,
+				E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */,
+				E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */,
 			);
 			path = SkatlicaZdravil;
 			sourceTree = "<group>";
@@ -103,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9743A1D20A9F9C600784CD9 /* Build configuration list for PBXNativeTarget "SkatlicaZdravil" */;
 			buildPhases = (
+				9FA40CA3F84480C583C64B9F /* [CP] Check Pods Manifest.lock */,
 				E97439FC20A9F9C400784CD9 /* Sources */,
 				E97439FD20A9F9C400784CD9 /* Frameworks */,
 				E97439FE20A9F9C400784CD9 /* Resources */,
+				370E7C02DF2B0BB0A2D6B7E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,9 +296,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94CAF8D20BC2EE5000D088A /* controlDrug.json in Resources */,
 				E9743A0E20A9F9C600784CD9 /* LaunchScreen.storyboard in Resources */,
+				E94CAF8C20BC2EE5000D088A /* warfarin.json in Resources */,
 				E9743A0B20A9F9C600784CD9 /* Assets.xcassets in Resources */,
+				E99631C620B43A20000CFE2A /* adherence.storyboard in Resources */,
 				E9743A0920A9F9C400784CD9 /* Main.storyboard in Resources */,
+				E94CAF8820BC2584000D088A /* simple.json in Resources */,
+				E9685EE620BDEA16009DA1D7 /* database.json in Resources */,
+				E94CAF8E20BC2EE5000D088A /* tapering.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +317,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		370E7C02DF2B0BB0A2D6B7E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA40CA3F84480C583C64B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkatlicaZdravil-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E97439FC20A9F9C400784CD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93CDDFF20AD60BF00DBFA48 /* ProfileTableViewCell.swift in Sources */,
+				E94D290C20B886C700FDB7BA /* PillViewController.swift in Sources */,
+				E99631C820B4510F000CFE2A /* DanesCollectionViewController.swift in Sources */,
+				E93CDE0520AD74F300DBFA48 /* Profile.swift in Sources */,
 				E9743A0620A9F9C400784CD9 /* ViewController.swift in Sources */,
+				E962423520B833E2000DA49B /* NavodilaViewController.swift in Sources */,
+				E93CDE0D20ADB13600DBFA48 /* ZdraviloTableViewController.swift in Sources */,
+				E93CDE0B20ADAAFD00DBFA48 /* Zdravilo.swift in Sources */,
+				E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */,
+				E9FFCF2820B55CDD00EDCA23 /* TodayPageViewController.swift in Sources */,
+				E9685EE220BCC5FF009DA1D7 /* PacientiTableViewController.swift in Sources */,
+				E93CDE0320AD73CA00DBFA48 /* ProfileTableViewController.swift in Sources */,
+				E93CDE0F20AEF6E000DBFA48 /* DodajanjeViewController.swift in Sources */,
+				E9685EE420BCC93F009DA1D7 /* AdhViewController.swift in Sources */,
+				E9FFCF2A20B5604700EDCA23 /* UIView.swift in Sources */,
+				E93CDE0720ADA60800DBFA48 /* ZdraviloTableViewCell.swift in Sources */,
+				E93CDE1120AF159400DBFA48 /* PagesViewController.swift in Sources */,
+				E9FFCF2C20B5615600EDCA23 /* HeaderCollectionReusableView.swift in Sources */,
 				E9743A0420A9F9C400784CD9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +537,7 @@
 		};
 		E9743A1E20A9F9C600784CD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3668738CDB428314A18B70E /* Pods-SkatlicaZdravil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +556,7 @@
 		};
 		E9743A1F20A9F9C600784CD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90F9402280FDE85E5E5D951A /* Pods-SkatlicaZdravil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

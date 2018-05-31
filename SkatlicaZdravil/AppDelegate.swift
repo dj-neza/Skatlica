@@ -8,14 +8,22 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let patientId = "2"
+        let controlId = "1"
+            
+        var usersData:UserDefaults = UserDefaults.standard
+        usersData.set(patientId, forKey: "patientId")
+        usersData.set(controlId, forKey: "controlId")
+        usersData.synchronize()
+        
         return true
     }
 

@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CJ-Kt-Ipl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Table View Controller-->
+        <scene sceneID="Dg4-9F-CB7">
+            <objects>
+                <tableViewController id="3CJ-Kt-Ipl" customClass="ProfileTableViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mmG-kV-1Oa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileTableViewCell" rowHeight="300" id="pHP-fK-fwT" customClass="ProfileTableViewCell" customModule="SkatlicaZdravil" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pHP-fK-fwT" id="kBx-Jd-7Lm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="72B-aX-p9b">
+                                            <rect key="frame" x="60" y="60" width="102.5" height="102.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="72B-aX-p9b" secondAttribute="height" multiplier="1:1" id="6RT-j8-w9c"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="dcT-G0-5Ve">
+                                            <rect key="frame" x="212.5" y="60" width="102.5" height="102.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dcT-G0-5Ve" secondAttribute="height" multiplier="1:1" id="Ct9-Ut-yJm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-aH-7kH">
+                                            <rect key="frame" x="154.5" y="205" width="66" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                            <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dcT-G0-5Ve" firstAttribute="width" secondItem="72B-aX-p9b" secondAttribute="width" id="08C-bl-nIR"/>
+                                        <constraint firstItem="76d-aH-7kH" firstAttribute="top" secondItem="72B-aX-p9b" secondAttribute="bottom" constant="42.5" id="4eP-ge-x13"/>
+                                        <constraint firstItem="76d-aH-7kH" firstAttribute="centerX" secondItem="kBx-Jd-7Lm" secondAttribute="centerX" id="9Qe-VD-JNk"/>
+                                        <constraint firstAttribute="trailing" secondItem="dcT-G0-5Ve" secondAttribute="trailing" constant="60" id="Ebc-OU-ZvZ"/>
+                                        <constraint firstItem="dcT-G0-5Ve" firstAttribute="top" secondItem="72B-aX-p9b" secondAttribute="top" id="GuI-ZN-zqk"/>
+                                        <constraint firstItem="72B-aX-p9b" firstAttribute="top" secondItem="kBx-Jd-7Lm" secondAttribute="top" constant="60" id="feD-hc-C5A"/>
+                                        <constraint firstItem="72B-aX-p9b" firstAttribute="leading" secondItem="kBx-Jd-7Lm" secondAttribute="leading" constant="60" id="iDD-2b-Zrr"/>
+                                        <constraint firstItem="dcT-G0-5Ve" firstAttribute="leading" secondItem="72B-aX-p9b" secondAttribute="trailing" constant="50" id="oCP-D0-sWM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="76d-aH-7kH" id="RGz-kS-r11"/>
+                                    <outlet property="left_img" destination="72B-aX-p9b" id="Zwe-rT-CZa"/>
+                                    <outlet property="right_img" destination="dcT-G0-5Ve" id="WaC-7F-7FS"/>
+                                    <segue destination="aeR-w0-MhG" kind="presentation" id="uqv-zX-yTn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="3CJ-Kt-Ipl" id="7ZO-Mb-bdJ"/>
+                            <outlet property="delegate" destination="3CJ-Kt-Ipl" id="pzi-yD-gCO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="DIK-Wz-VTh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6lg-DW-7Og" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-498.39999999999998" y="173.16341829085459"/>
+        </scene>
+        <!--Moja zdravila-->
+        <scene sceneID="9Nn-KI-njJ">
+            <objects>
+                <tableViewController id="11x-ad-qa5" customClass="ZdraviloTableViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gU5-2F-9Cj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="XGP-m2-Gul">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Za podrobnosti klikni na zdravilo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-I6-tBR">
+                                    <rect key="frame" x="19" y="27" width="337" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="lQi-I6-tBR" firstAttribute="leading" secondItem="XGP-m2-Gul" secondAttribute="leading" constant="19" id="Ca1-xP-UBc"/>
+                                <constraint firstItem="lQi-I6-tBR" firstAttribute="centerY" secondItem="XGP-m2-Gul" secondAttribute="centerY" id="QNd-90-oYw"/>
+                                <constraint firstItem="lQi-I6-tBR" firstAttribute="centerX" secondItem="XGP-m2-Gul" secondAttribute="centerX" id="yHl-eb-sHf"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ZdraviloTableViewCell" rowHeight="120" id="NvT-Q7-DMw" customClass="ZdraviloTableViewCell" customModule="SkatlicaZdravil" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NvT-Q7-DMw" id="0j0-8A-Oww">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-Wr-UPF">
+                                            <rect key="frame" x="22" y="11" width="98" height="98"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="98" id="Bb9-vS-ced"/>
+                                                <constraint firstAttribute="width" secondItem="ZJA-Wr-UPF" secondAttribute="height" multiplier="1:1" id="NA5-bu-JWb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCC-Ee-kiy">
+                                            <rect key="frame" x="138" y="39" width="187" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="hCC-Ee-kiy" secondAttribute="trailing" constant="16" id="7y8-YZ-fVE"/>
+                                        <constraint firstItem="ZJA-Wr-UPF" firstAttribute="leading" secondItem="0j0-8A-Oww" secondAttribute="leading" constant="22" id="LWF-rY-qkb"/>
+                                        <constraint firstItem="ZJA-Wr-UPF" firstAttribute="centerY" secondItem="0j0-8A-Oww" secondAttribute="centerY" id="Ybz-Ny-UXY"/>
+                                        <constraint firstItem="hCC-Ee-kiy" firstAttribute="centerY" secondItem="0j0-8A-Oww" secondAttribute="centerY" id="eLj-fJ-3V4"/>
+                                        <constraint firstItem="hCC-Ee-kiy" firstAttribute="leading" secondItem="ZJA-Wr-UPF" secondAttribute="trailing" constant="18" id="fwG-sw-pz4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pillImg" destination="ZJA-Wr-UPF" id="4at-Ui-ANC"/>
+                                    <outlet property="pillLabel" destination="hCC-Ee-kiy" id="VWi-Go-9xB"/>
+                                    <segue destination="XDg-nP-z96" kind="show" id="6am-ak-Nm1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="11x-ad-qa5" id="ScC-Zw-bmn"/>
+                            <outlet property="delegate" destination="11x-ad-qa5" id="UH4-Eg-WNZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Moja zdravila" id="kzz-92-r1g">
+                        <barButtonItem key="rightBarButtonItem" title="Dodaj novo" id="t3Y-fn-3ul">
+                            <connections>
+                                <segue destination="N4I-ey-Hio" kind="presentation" id="X7c-Rn-VlS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRC-Q3-55G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="9"/>
+        </scene>
+        <!--Zdravilo-->
+        <scene sceneID="12w-CI-GvQ">
+            <objects>
+                <viewController id="XDg-nP-z96" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mlU-wY-Naf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SXI-fs-P1n">
+                                <rect key="frame" x="16" y="96" width="343" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28.01.2018 - 28.02.2018" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-OU-rnY">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 tablete" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX1-ml-ilx">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dnevno" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scu-tC-FCV">
+                                        <rect key="frame" x="0.0" y="58" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zjutraj" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73g-GT-Qsh">
+                                        <rect key="frame" x="0.0" y="87" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodatna navodila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-gi-bdO">
+                                <rect key="frame" x="16" y="237" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="pred obrokom, na prazen želodec, s tekočino" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Erh-mh-Wca">
+                                <rect key="frame" x="11" y="265" width="353" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="4iu-l2-Woh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="UJW-1i-CWS">
+                                <rect key="frame" x="44" y="373" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UJW-1i-CWS" secondAttribute="height" multiplier="1:1" id="dNR-Mn-iFc"/>
+                                    <constraint firstAttribute="width" constant="128" id="rWo-Yy-agE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="EZK-9P-pN4">
+                                <rect key="frame" x="200" y="373" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EZK-9P-pN4" secondAttribute="height" multiplier="1:1" id="iDB-OA-kAQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UJW-1i-CWS" firstAttribute="leading" secondItem="Rc0-sA-j2t" secondAttribute="leading" constant="44" id="3Ap-pn-6Cv"/>
+                            <constraint firstItem="UJW-1i-CWS" firstAttribute="top" secondItem="Erh-mh-Wca" secondAttribute="bottom" constant="30" id="49L-7C-cd6"/>
+                            <constraint firstItem="SXI-fs-P1n" firstAttribute="top" secondItem="Rc0-sA-j2t" secondAttribute="top" constant="32" id="CKi-KU-3Ec"/>
+                            <constraint firstItem="EZK-9P-pN4" firstAttribute="top" secondItem="UJW-1i-CWS" secondAttribute="top" id="HlQ-Kf-Lgf"/>
+                            <constraint firstItem="Qzn-gi-bdO" firstAttribute="top" secondItem="SXI-fs-P1n" secondAttribute="bottom" constant="25" id="OLJ-Pi-aad"/>
+                            <constraint firstItem="Qzn-gi-bdO" firstAttribute="leading" secondItem="SXI-fs-P1n" secondAttribute="leading" id="Xw2-ut-RAW"/>
+                            <constraint firstItem="Erh-mh-Wca" firstAttribute="width" secondItem="SXI-fs-P1n" secondAttribute="width" constant="10" id="ZLR-sd-MP6"/>
+                            <constraint firstItem="Erh-mh-Wca" firstAttribute="leading" secondItem="SXI-fs-P1n" secondAttribute="leading" constant="-5" id="aOj-uW-B48"/>
+                            <constraint firstItem="Qzn-gi-bdO" firstAttribute="width" secondItem="SXI-fs-P1n" secondAttribute="width" id="adK-mu-crO"/>
+                            <constraint firstItem="EZK-9P-pN4" firstAttribute="width" secondItem="UJW-1i-CWS" secondAttribute="width" id="ksL-vv-pdq"/>
+                            <constraint firstItem="SXI-fs-P1n" firstAttribute="leading" secondItem="Rc0-sA-j2t" secondAttribute="leading" constant="16" id="lgO-1E-ONX"/>
+                            <constraint firstItem="EZK-9P-pN4" firstAttribute="leading" secondItem="UJW-1i-CWS" secondAttribute="trailing" constant="28" id="m2j-jw-7Dw"/>
+                            <constraint firstItem="Erh-mh-Wca" firstAttribute="top" secondItem="Qzn-gi-bdO" secondAttribute="bottom" constant="-1" id="nay-1N-8fQ"/>
+                            <constraint firstItem="SXI-fs-P1n" firstAttribute="centerX" secondItem="Rc0-sA-j2t" secondAttribute="centerX" id="sxs-ri-bdz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rc0-sA-j2t"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Zdravilo" id="ddZ-ct-RiQ">
+                        <barButtonItem key="rightBarButtonItem" title="Spremeni" id="DiK-mj-wX1"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqN-g3-2zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="-200.14992503748127"/>
+        </scene>
+        <!--Vzemi danes-->
+        <scene sceneID="qh9-kP-mjy">
+            <objects>
+                <viewController id="pMJ-cw-TRQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dhY-rN-hz1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-FK-vzR">
+                                <rect key="frame" x="67" y="116" width="240" height="402"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Tukaj bodo prikazana današnja zdravila, ko bo Neža sprogramirala nek hud asociativen prikaz in se končno odločila, kaj je najboljša rešitev za ta screen. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6t-Z8-Li5">
+                                <rect key="frame" x="61" y="599" width="252" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Dodaj novo zdravilo"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Pa3-St-waZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vzemi danes" id="Hbe-8h-Hnt">
+                        <barButtonItem key="leftBarButtonItem" title="Vsa zdravila" id="zL4-Bb-er8">
+                            <connections>
+                                <segue destination="11x-ad-qa5" kind="show" id="0ie-Q2-VW6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Nastavitve" id="evd-ZE-qUa"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfW-Ch-eIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="172.26386806596702"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rFF-fb-wmL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N4I-ey-Hio" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bvs-QN-x58">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O6M-2k-Pzz" kind="relationship" relationship="rootViewController" id="DmN-pW-uai"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkv-i3-uy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="740"/>
+        </scene>
+        <!--Novo zdravilo-->
+        <scene sceneID="vJC-KG-baf">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O6M-2k-Pzz" customClass="DodajanjeViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Novo zdravilo" id="lki-qH-fwk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="F3M-nB-n2s">
+                            <connections>
+                                <action selector="cancel:" destination="O6M-2k-Pzz" id="3CL-VA-4co"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sUq-2w-CoA">
+                            <connections>
+                                <segue destination="R5b-YX-5jI" kind="unwind" unwindAction="unwindToZdravilaListWithSender:" id="Mpm-wT-uAn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="sUq-2w-CoA" id="7Cv-vS-IWO"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PO4-mq-kdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R5b-YX-5jI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="740"/>
+        </scene>
+        <!--Page2-->
+        <scene sceneID="pzR-49-Uhw">
+            <objects>
+                <viewController storyboardIdentifier="page2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CVZ-V3-ipR" customClass="Page2" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYN-bf-fbj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum začetka jemanja:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jZ-3m-MYh">
+                                <rect key="frame" x="63" y="111" width="248" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum konca jemanja:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-Dg-gFI">
+                                <rect key="frame" x="72" y="319" width="230" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CPh-7Z-vNI">
+                                <rect key="frame" x="0.0" y="159" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="548348061.54156101">
+                                    <!--2018-05-18 14:54:21 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="536497200">
+                                    <!--2018-01-01 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="sl_SI"/>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hOa-lv-XkR">
+                                <rect key="frame" x="0.0" y="372" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="548348061.54156101">
+                                    <!--2018-05-18 14:54:21 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="536497200">
+                                    <!--2018-01-01 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="sl_SI"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBv-WO-5qz">
+                                <rect key="frame" x="94" y="587" width="187" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Naprej na količino"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-5a-GLC">
+                                <rect key="frame" x="94" y="533" width="187" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Nazaj na zdravilo"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="xNa-XH-BbP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFI-xE-BiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4196" y="389"/>
+        </scene>
+        <!--Page1-->
+        <scene sceneID="lNh-uO-VYX">
+            <objects>
+                <viewController storyboardIdentifier="page1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ieU-FU-gsc" customClass="Page1" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="505-Nx-m1d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ime zdravila" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-N5-r9c">
+                                <rect key="frame" x="52" y="170" width="248" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Katero zdravilo jemlješ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2a-k4-me9">
+                                <rect key="frame" x="52" y="109" width="248" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQZ-WD-pQb">
+                                <rect key="frame" x="52" y="467" width="248" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Naprej na datume"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="eRl-6N-ltj"/>
+                    </view>
+                    <connections>
+                        <outlet property="vnos1" destination="bjF-N5-r9c" id="aFZ-P7-DVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBe-Fl-DsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3404" y="389"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eqd-NF-qeO">
+            <objects>
+                <viewController id="rhS-Ha-Lxs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="URO-D8-QoX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koliko zdravila moraš vzeti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-gG-1rh">
+                                <rect key="frame" x="32" y="99" width="311" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="naenkrat in v kakšni obliki?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GP-jn-tBu">
+                                <rect key="frame" x="32" y="127" width="311" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vo-cI-gfN">
+                                <rect key="frame" x="199" y="183" width="144" height="110"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="količina" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-bD-ZZ1">
+                                <rect key="frame" x="32" y="221" width="143" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Uei-CW-1XM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amf-mP-5RT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3404" y="1089.8050974512744"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M5G-5Y-PJS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aeR-w0-MhG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZDa-xa-ESy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pMJ-cw-TRQ" kind="relationship" relationship="rootViewController" id="YiD-Ye-N4z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJd-i5-dxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="unavailable" width="533" height="534"/>
+    </resources>
+</document>

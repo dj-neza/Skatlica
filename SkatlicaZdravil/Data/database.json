@@ -1,0 +1,99 @@
+{
+  "starejsi": [
+    {
+      "id": "1",
+      "name": "Janez Novak",
+      "img": "janez",
+      "zdravila": [
+          {
+            "name": "Paracetamol",
+            "pill_img": "paracetamol_pill",
+            "box_img": "paracetamol_box",
+            "startDate": "28.5.2018",
+            "endDate": "28.6.2018",
+            "dose": 1,
+            "form": "50mg tablet",
+            "time": ["08:00", "12:15", "18:30"],
+            "frequency": "daily",
+            "additionalRules" : ["na prazen želodec", "pred obrokom"]
+          }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tina Horvat",
+      "img": "tina",
+      "zdravila": [
+          {
+            "name": "Warfarin",
+            "pill_img": "warfarin_pill",
+            "box_img": "warfarin_box",
+            "startDate": "28.5.2018",
+            "endDate": "28.6.2018",
+            "dose": 2,
+            "form": "capsule",
+            "time": ["08:30", "11:15", "15:30"],
+            "frequency": "daily",
+            "additionalRules" : ["s tekočino", "med obrokom"]
+          },
+          {
+            "name": "Morphine",
+            "pill_img": "morphine5_pill",
+            "box_img": "morphine5_box",
+            "startDate": "28.5.2018",
+            "endDate": "28.6.2018",
+            "dose": 1,
+            "form": "capsule",
+            "time": ["08:30", "20:30"],
+            "frequency": "daily",
+            "additionalRules" : ["s tekočino"]
+          }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Rok Lala",
+      "img": "rok",
+      "zdravila": [
+          {
+            "name": "Morphine",
+            "pill_img": "morphine10_pill",
+            "box_img": "morphine10_box",
+            "startDate": "28.5.2018",
+            "endDate": "28.6.2018",
+            "dose": 1,
+            "form": "capsule",
+            "time": ["08:30", "18:30"],
+            "frequency": "daily",
+            "additionalRules" : ["s tekočino"]
+          },
+          {
+            "name": "Morphine",
+            "pill_img": "morphine10_pill",
+            "box_img": "morphine10_box",
+            "startDate": "28.5.2018",
+            "endDate": "28.6.2018",
+            "dose": 1,
+            "form": "capsule",
+            "time": ["13:30", "22:30"],
+            "frequency": "daily",
+            "additionalRules" : ["s tekočino"]
+          }
+      ]
+    }
+  ],
+  "skrbniki": [
+    {
+      "id": "1",
+      "pacienti": ["1", "2", "3"]
+    },
+    {
+      "id": "2",
+      "pacienti": ["1"]
+    },
+    {
+      "id": "3",
+      "pacienti": ["2", "3"]
+    }
+  ]
+}

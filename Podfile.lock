@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: e6794ad5ec56b2f09eab82685ba23949d714f3f4
+
+COCOAPODS: 1.5.0
