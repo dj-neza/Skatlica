@@ -301,30 +301,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodatna navodila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsX-q8-eYk">
-                                <rect key="frame" x="16" y="252" width="343" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="pred obrokom, na prazen želodec, s tekočino" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EW9-KV-TT5">
-                                <rect key="frame" x="11" y="281" width="353" height="78"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="hvx-yA-nnL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="sav-a3-lRW" userLabel="pill_img">
-                                <rect key="frame" x="44" y="389" width="128" height="128"/>
+                                <rect key="frame" x="44" y="348" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="sav-a3-lRW" secondAttribute="height" multiplier="1:1" id="jXR-XL-7fB"/>
                                     <constraint firstAttribute="width" constant="128" id="wM4-eY-aeR"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unavailable" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-kg-nEE" userLabel="box_img">
-                                <rect key="frame" x="200" y="389" width="128" height="128"/>
+                                <rect key="frame" x="200" y="348" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="Azx-kg-nEE" secondAttribute="height" multiplier="1:1" id="ZCK-eZ-KSZ"/>
                                 </constraints>
@@ -335,25 +320,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK5-Io-rx0">
+                                <rect key="frame" x="16" y="496" width="343" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Potrdi vzeto zdravilo"/>
+                                <connections>
+                                    <action selector="takePill:" destination="ete-dk-zIF" eventType="touchUpInside" id="AOP-gF-Vtz"/>
+                                    <segue destination="2Ia-9o-AUw" kind="unwind" unwindAction="unwindedWithSegue:" id="grw-Rb-hSj"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="pred obrokom, na prazen želodec, s tekočino" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EW9-KV-TT5">
+                                <rect key="frame" x="11" y="240" width="353" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="hvx-yA-nnL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ydd-Vh-A8B" firstAttribute="leading" secondItem="0sE-84-aGO" secondAttribute="leading" constant="16" id="0ti-Lw-q7T"/>
                             <constraint firstItem="Ydd-Vh-A8B" firstAttribute="top" secondItem="0sE-84-aGO" secondAttribute="top" constant="96" id="1Wm-C1-Gtw"/>
+                            <constraint firstItem="RK5-Io-rx0" firstAttribute="width" secondItem="Ydd-Vh-A8B" secondAttribute="width" id="72W-Ww-eVa"/>
                             <constraint firstItem="Azx-kg-nEE" firstAttribute="leading" secondItem="sav-a3-lRW" secondAttribute="trailing" constant="28" id="7ed-Zq-Ei9"/>
                             <constraint firstItem="JsE-B4-2iK" firstAttribute="top" secondItem="0sE-84-aGO" secondAttribute="top" constant="48" id="9ur-CE-4bp"/>
                             <constraint firstItem="sav-a3-lRW" firstAttribute="leading" secondItem="0sE-84-aGO" secondAttribute="leading" constant="44" id="LFU-bt-6eh"/>
-                            <constraint firstItem="jsX-q8-eYk" firstAttribute="top" secondItem="Ydd-Vh-A8B" secondAttribute="bottom" constant="20" id="NBt-8h-XSU"/>
                             <constraint firstItem="sav-a3-lRW" firstAttribute="top" secondItem="EW9-KV-TT5" secondAttribute="bottom" constant="30" id="RJc-JG-DzV"/>
+                            <constraint firstItem="RK5-Io-rx0" firstAttribute="top" secondItem="sav-a3-lRW" secondAttribute="bottom" constant="20" id="Rag-CR-tbc"/>
                             <constraint firstItem="JsE-B4-2iK" firstAttribute="leading" secondItem="0sE-84-aGO" secondAttribute="leading" constant="16" id="axm-mL-P5I"/>
-                            <constraint firstItem="EW9-KV-TT5" firstAttribute="leading" secondItem="jsX-q8-eYk" secondAttribute="leading" constant="-5" id="dUw-Fg-5xI"/>
+                            <constraint firstItem="EW9-KV-TT5" firstAttribute="leading" secondItem="Ydd-Vh-A8B" secondAttribute="leading" constant="-5" id="eAO-Ds-V7g"/>
                             <constraint firstItem="Ydd-Vh-A8B" firstAttribute="centerX" secondItem="0sE-84-aGO" secondAttribute="centerX" id="gy7-n9-9nc"/>
-                            <constraint firstItem="jsX-q8-eYk" firstAttribute="width" secondItem="Ydd-Vh-A8B" secondAttribute="width" id="rUC-Ih-R2L"/>
-                            <constraint firstItem="jsX-q8-eYk" firstAttribute="centerX" secondItem="0sE-84-aGO" secondAttribute="centerX" id="t90-I1-ZgQ"/>
+                            <constraint firstItem="EW9-KV-TT5" firstAttribute="top" secondItem="Ydd-Vh-A8B" secondAttribute="bottom" constant="8" id="tqk-R8-Aw1"/>
                             <constraint firstItem="EW9-KV-TT5" firstAttribute="centerX" secondItem="0sE-84-aGO" secondAttribute="centerX" id="uVs-gd-QRp"/>
                             <constraint firstItem="JsE-B4-2iK" firstAttribute="width" secondItem="Ydd-Vh-A8B" secondAttribute="width" id="wT1-2e-s2j"/>
                             <constraint firstItem="Azx-kg-nEE" firstAttribute="top" secondItem="sav-a3-lRW" secondAttribute="top" id="wTf-ho-sv7"/>
-                            <constraint firstItem="EW9-KV-TT5" firstAttribute="top" secondItem="jsX-q8-eYk" secondAttribute="bottom" id="xbL-6Q-94p"/>
+                            <constraint firstItem="RK5-Io-rx0" firstAttribute="centerX" secondItem="0sE-84-aGO" secondAttribute="centerX" id="xUf-kp-fFz"/>
                             <constraint firstItem="Azx-kg-nEE" firstAttribute="width" secondItem="sav-a3-lRW" secondAttribute="width" id="xla-U3-mVV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0sE-84-aGO"/>
@@ -370,8 +373,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvs-E5-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2Ia-9o-AUw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="952"/>
+            <point key="canvasLocation" x="3092" y="951"/>
         </scene>
         <!--Zdravila pacienta-->
         <scene sceneID="Ncq-YD-pj2">

@@ -27,7 +27,13 @@ final class DanesCollectionViewController: UICollectionViewController {
         if (segue.identifier == "navodila") {
             let indexPath: IndexPath = (collectionView?.indexPathsForSelectedItems![0])!
             let destViewController = segue.destination as? NavodilaViewController
-            let zdravilo = zdraviloForIndexPath(indexPath)
+            var zdravilo: Zdravilo?
+            if (numberOfSections(in: collectionView!) == 1 || indexPath.section == 1) {
+                zdravilo = zdraviloForIndexPath(indexPath)
+            }
+            else {
+                zdravilo = overdueForIndexPath(indexPath)
+            }
             destViewController!.zdravilo = zdravilo
         }
     }

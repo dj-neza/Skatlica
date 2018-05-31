@@ -20,7 +20,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     
     let notification: Notification.Name = .NSCalendarDayChanged
     
-    var zdravila: Zdravila?
+    var zdravila = Zdravila(jutro: [], dopoldne: [], popoldne: [], vecer: [])
     var zdravilaNeurejena = [Zdravilo]()
     var pageControl = UIPageControl()
     
@@ -38,9 +38,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        //TODO: overdue se posodobi
-        
+        orderedViewControllers = redoControllers()
         let currentTime = Date()
         let hour = calendar.component(.hour, from: currentTime)
         var firstViewController = orderedViewControllers[0]
@@ -85,6 +83,14 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         }
     }
     
+    /*@IBAction func unwinded(segue: UIStoryboardSegue) {
+        let source = segue.source as? NavodilaViewController
+        let vzeto = source?.zdravilo
+        for i in (zdravila?.jutro)! {
+            
+        }
+    }*/
+    
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         let page1 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
         let page2 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
@@ -100,6 +106,22 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         page4.zdravila = zdravila
         return [page1, page2, page3, page4]
     }()
+    
+    func redoControllers() -> [UIViewController] {        
+        let page1 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
+        let page2 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
+        let page3 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
+        let page4 = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "page1") as! DanesCollectionViewController
+        page1.viewId = "jutro"
+        page2.viewId = "dopoldne"
+        page3.viewId = "popoldne"
+        page4.viewId = "vecer"
+        page1.zdravila = zdravila
+        page2.zdravila = zdravila
+        page3.zdravila = zdravila
+        page4.zdravila = zdravila
+        return [page1, page2, page3, page4]
+    }
     
     @objc func configureTodayPills() {
         let usersData:UserDefaults = UserDefaults.standard
@@ -121,6 +143,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
             zdravila?.dopoldne = zdravilaRazporedi(timeStart: 9, timeEnd: 12)
             zdravila?.popoldne = zdravilaRazporedi(timeStart: 12, timeEnd: 18)
             zdravila?.vecer = zdravilaRazporedi(timeStart: 18, timeEnd: 24)
+            zdravila?.overdue = []
         } catch {
             print("Unable to read the database.")
         }
@@ -157,6 +180,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     
     func getOverdueList(hour: Int) {
+        zdravila?.overdue = []
         for i in (zdravila?.jutro)! {
             let hour1 = calendar.component(.hour, from: i.time[0])
             if (hour1 < hour && i.taken == false) {

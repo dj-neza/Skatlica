@@ -21,6 +21,7 @@ class NavodilaViewController: UIViewController {
     @IBOutlet weak var box_img: UIImageView!
     
     var zdravilo: Zdravilo?
+    //var zdravila = Zdravila(jutro: [], dopoldne: [], popoldne: [], vecer: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,11 @@ class NavodilaViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func takePill(_ sender: Any) {
+        zdravilo?.taken = true
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func arrayToString(additional: [String]) -> String {
