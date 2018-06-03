@@ -11,15 +11,35 @@ import UIKit
 final class DanesCollectionViewController: UICollectionViewController {
     
     var viewId: String?
-    var zdravila : Zdravila?
+    var zdravila : [Zdravilo]?
+    var open = false
     
+    @IBOutlet weak var headerButton: UIButton!
     // MARK: - Properties
     fileprivate let reuseIdentifier = "DanesCollectionViewCell"
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-    fileprivate let itemsPerRow: CGFloat = 3
+    fileprivate var itemsPerRow: CGFloat = 3
+    
+    let usersData:UserDefaults = UserDefaults.standard
+    
+    @IBAction func showOverdue(_ sender: UIButton) {
+        if (open == false) {
+            open = true
+            self.collectionView?.reloadData()
+            //sender.titleLabel?.text = "Skrij zamujena zdravila"
+        }
+        else {
+            open = false
+            self.collectionView?.reloadData()
+            //sender.titleLabel?.text = "Prikazi zamujena zdravila"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let decoded  = usersData.object(forKey: "zdravila") as! Data
+        zdravila = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,19 +62,37 @@ final class DanesCollectionViewController: UICollectionViewController {
 // MARK: - Private
 private extension DanesCollectionViewController {
     func zdraviloForIndexPath(_ indexPath: IndexPath) -> Zdravilo {
+        let jutro = usersData.value(forKey: "jutro") as? [Int]
+        let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
+        let popoldne = usersData.value(forKey: "popoldne") as? [Int]
+        let vecer = usersData.value(forKey: "vecer") as? [Int]
+        var id = 0
         switch viewId {
         case "jutro":
-            return zdravila!.jutro[indexPath.row]
+            id = jutro![indexPath.row]
         case "dopoldne":
-            return zdravila!.dopoldne[indexPath.row]
+            id = dopoldne![indexPath.row]
         case "popoldne":
-            return zdravila!.popoldne[indexPath.row]
+            id = popoldne![indexPath.row]
         default:
-            return zdravila!.vecer[indexPath.row]
+            id = vecer![indexPath.row]
         }
+        for i in zdravila! {
+            if i.id == id {
+                return i
+            }
+        }
+        return zdravila![0]
     }
     func overdueForIndexPath(_ indexPath: IndexPath) -> Zdravilo {
-        return zdravila!.overdue[indexPath.row]
+        let overdue = usersData.value(forKey: "overdue") as? [Int]
+        let id = overdue![indexPath.row]
+        for i in zdravila! {
+            if i.id == id {
+                return i
+            }
+        }
+        return zdravila![0]
     }
 }
 
@@ -63,39 +101,55 @@ extension DanesCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         let currentTime = Date()
         let hour = Calendar.current.component(.hour, from: currentTime)
+        let overdue = usersData.value(forKey: "overdue") as? [Int]
         switch viewId {
         case "jutro":
-            if (hour < 9) { return 2 }
+            if (hour < 9 && overdue?.count != 0) { return 2 }
             else { return 1 }
         case "dopoldne":
-            if (hour >= 9 && hour < 12) { return 2 }
+            if (hour >= 9 && hour < 12 && overdue?.count != 0) { return 2 }
             else { return 1 }
         case "popoldne":
-            if (hour >= 12 && hour < 18) { return 2 }
+            if (hour >= 12 && hour < 18 && overdue?.count != 0) { return 2 }
             else { return 1 }
         default:
-            if (hour >= 18) { return 2 }
+            if (hour >= 18 && overdue?.count != 0) { return 2 }
             else { return 1 }
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
+        var result: Int
         if (numberOfSections(in: collectionView) == 1 || section == 1) {
+            let jutro = usersData.value(forKey: "jutro") as? [Int]
+            let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
+            let popoldne = usersData.value(forKey: "popoldne") as? [Int]
+            let vecer = usersData.value(forKey: "vecer") as? [Int]
             switch viewId {
             case "jutro":
-                return zdravila!.jutro.count
+                result = jutro!.count
             case "dopoldne":
-                return zdravila!.dopoldne.count
+                result = dopoldne!.count
             case "popoldne":
-                return zdravila!.popoldne.count
+                result = popoldne!.count
             default:
-                return zdravila!.vecer.count
+                result = vecer!.count
+            }
+            if (result < 5) {
+                itemsPerRow = 2
             }
         }
         else {
-            return zdravila!.overdue.count
+            if (open == true) {
+                let overdue = usersData.value(forKey: "overdue") as? [Int]
+                result = overdue!.count
+            }
+            else {
+                result = 0
+            }
         }
+        return result
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -104,18 +158,17 @@ extension DanesCollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-    withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-            switch viewId {
-            case "jutro":
-                headerView.sectionHeader.text = "Zjutraj"
-            case "dopoldne":
-                headerView.sectionHeader.text = "Dopoldne"
-            case "popoldne":
-                headerView.sectionHeader.text = "Popoldne"
-            default:
-                headerView.sectionHeader.text = "Zvecer"
+                                                                             withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
+            if (collectionView.numberOfItems(inSection: indexPath.section) != 0) {
+                headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .normal)
+                headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .highlighted)
+            }
+            else {
+                headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .normal)
+                headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .highlighted)
             }
             return headerView
+            
         default:
             assert(false, "Error occured, something's up! :O")
         }
@@ -150,11 +203,17 @@ extension DanesCollectionViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+        let count = collectionView.numberOfItems(inSection: indexPath.section)
+        if (count < 5) {
+            itemsPerRow = 2
+        }
+        else {
+            itemsPerRow = 3
+        }
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: 160)
+        return CGSize(width: widthPerItem, height: widthPerItem+40)
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -168,4 +227,18 @@ extension DanesCollectionViewController : UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceSizeForHeaderInSection: Int) -> CGSize {
+        if (numberOfSections(in: collectionView) == 1 || referenceSizeForHeaderInSection == 1) {
+            return CGSize(width: 0, height: 0)
+        }
+        else {
+            return CGSize(width: collectionView.frame.size.width, height: 50)
+        }
+    }
 }
+
+
+
+
+

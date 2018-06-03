@@ -47,15 +47,73 @@ class NavodilaViewController: UIViewController {
         self.additionalRules.text = arrayToString(additional: (zdravilo?.additionalRules)!)
         self.pill_img.image = UIImage(named: (zdravilo?.pill_img)!)
         self.box_img.image = UIImage(named: (zdravilo?.box_img)!)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        pill_img.isUserInteractionEnabled = true
+        pill_img.addGestureRecognizer(tapGestureRecognizer)
+        box_img.isUserInteractionEnabled = true
+        box_img.addGestureRecognizer(tapGestureRecognizer1)
+        
     }
 
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        let popOverVC = UIStoryboard(name: "adherence", bundle: nil).instantiateViewController(withIdentifier: "popup") as! PopupViewController
+        popOverVC.image1 = tappedImage.image
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func takePill(_ sender: Any) {
-        zdravilo?.taken = true
+        let usersData:UserDefaults = UserDefaults.standard
+        var taken = usersData.value(forKey: "taken") as? [String: Bool]
+        var overdue = usersData.value(forKey: "overdue") as? [Int]
+        let jutro = usersData.value(forKey: "jutro") as? [Int]
+        let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
+        let popoldne = usersData.value(forKey: "popoldne") as? [Int]
+        let vecer = usersData.value(forKey: "vecer") as? [Int]
+        taken![String((zdravilo?.id)!)] = true
+        for i in jutro! {
+            if i == (zdravilo?.id)! {
+                let newJutro = jutro?.filter { $0 != i }
+                usersData.set(newJutro, forKey: "jutro")
+            }
+        }
+        for i in dopoldne! {
+            if i == (zdravilo?.id)! {
+                let newDop = dopoldne?.filter { $0 != i }
+                usersData.set(newDop, forKey: "dopoldne")
+            }
+        }
+        for i in popoldne! {
+            if i == (zdravilo?.id)! {
+                let newPop = popoldne?.filter { $0 != i }
+                usersData.set(newPop, forKey: "popoldne")
+            }
+        }
+        for i in vecer! {
+            if i == (zdravilo?.id)! {
+                let newVecer = vecer?.filter { $0 != i }
+                usersData.set(newVecer, forKey: "vecer")
+            }
+        }
+        for i in overdue! {
+            if i == (zdravilo?.id)! {
+                let newJutro = jutro?.filter { $0 != i }
+                usersData.set(newJutro, forKey: "overdue")
+            }
+        }
+        usersData.set(taken, forKey: "taken")
+        usersData.synchronize()
         _ = navigationController?.popViewController(animated: true)
     }
     
@@ -73,15 +131,5 @@ class NavodilaViewController: UIViewController {
         }
         return rules
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

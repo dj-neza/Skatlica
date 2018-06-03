@@ -79,14 +79,16 @@ class PacientiTableViewController: UITableViewController {
     
     func dataToPeople(data: JSON) -> People {
         var zdravila = [Zdravilo]()
+        var indeeks = 0
         for (_, zd) in data["zdravila"] {
-            let zdravilo = dataToZdravilo(data: zd)
+            let zdravilo = dataToZdravilo(data: zd, ind: indeeks)
+            indeeks = indeeks + 1
             zdravila.append(zdravilo)
         }
         let result = People(name: data["name"].stringValue, img: data["img"].stringValue, patientId: data["id"].stringValue, zdravila: zdravila)
         return result!
     }
-    func dataToZdravilo(data: JSON) -> Zdravilo {
+    func dataToZdravilo(data: JSON, ind: Int) -> Zdravilo {
         var time: [String] = []
         for (_, o) in data["time"] {
             time.append(o.stringValue)
@@ -95,8 +97,8 @@ class PacientiTableViewController: UITableViewController {
         for (_, o2) in data["additionalRules"] {
             additional.append(o2.stringValue)
         }
-        let result = Zdravilo(name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
-        return result!
+        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
+        return result
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -34,6 +34,7 @@
 		E99631C620B43A20000CFE2A /* adherence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99631C520B43A20000CFE2A /* adherence.storyboard */; };
 		E99631C820B4510F000CFE2A /* DanesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */; };
 		E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */; };
+		E999260420C2E04A00DC6177 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999260320C2E04A00DC6177 /* PopupViewController.swift */; };
 		E9FFCF2820B55CDD00EDCA23 /* TodayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2720B55CDD00EDCA23 /* TodayPageViewController.swift */; };
 		E9FFCF2A20B5604700EDCA23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2920B5604700EDCA23 /* UIView.swift */; };
 		E9FFCF2C20B5615600EDCA23 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFCF2B20B5615600EDCA23 /* HeaderCollectionReusableView.swift */; };
@@ -83,6 +84,7 @@
 		E99631C520B43A20000CFE2A /* adherence.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = adherence.storyboard; sourceTree = "<group>"; };
 		E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewController.swift; sourceTree = "<group>"; };
 		E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewCell.swift; sourceTree = "<group>"; };
+		E999260320C2E04A00DC6177 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		E9FFCF2720B55CDD00EDCA23 /* TodayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPageViewController.swift; sourceTree = "<group>"; };
 		E9FFCF2920B5604700EDCA23 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9FFCF2B20B5615600EDCA23 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				E94D290B20B886C700FDB7BA /* PillViewController.swift */,
 				E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */,
 				E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */,
+				E999260320C2E04A00DC6177 /* PopupViewController.swift */,
 			);
 			path = SkatlicaZdravil;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				E93CDE0F20AEF6E000DBFA48 /* DodajanjeViewController.swift in Sources */,
 				E9685EE420BCC93F009DA1D7 /* AdhViewController.swift in Sources */,
 				E9FFCF2A20B5604700EDCA23 /* UIView.swift in Sources */,
+				E999260420C2E04A00DC6177 /* PopupViewController.swift in Sources */,
 				E93CDE0720ADA60800DBFA48 /* ZdraviloTableViewCell.swift in Sources */,
 				E93CDE1120AF159400DBFA48 /* PagesViewController.swift in Sources */,
 				E9FFCF2C20B5615600EDCA23 /* HeaderCollectionReusableView.swift in Sources */,

@@ -12,3 +12,9 @@ class DanesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pill_image: UIImageView!
     @IBOutlet weak var pill_name: UILabel!
 }
+
+class DueTableViewCell: UITableViewCell {
+    @IBOutlet weak var pillName: UILabel!
+    @IBOutlet weak var pillTime: UILabel!
+    
+}

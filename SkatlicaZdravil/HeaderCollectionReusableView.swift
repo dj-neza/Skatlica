@@ -9,7 +9,8 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var sectionHeader: UILabel!
+    
+    @IBOutlet weak var headerButton: UIButton!
     
 }
 

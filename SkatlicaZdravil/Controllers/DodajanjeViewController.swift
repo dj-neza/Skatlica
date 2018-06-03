@@ -78,7 +78,7 @@ class DodajanjeViewController: UIPageViewController, UIPageViewControllerDelegat
             return
         }
         let date = "01.01.1000"
-        zdravilo = Zdravilo(name: page1.vnos1.text!, pill_img: "human", box_img: "human", startDate: date, endDate: date, dose: 1.0, form: "pill", time: ["morning"], frequency: "daily")
+        zdravilo = Zdravilo(id: 1, name: page1.vnos1.text!, pill_img: "human", box_img: "human", startDate: date, endDate: date, dose: 1.0, form: "pill", time: ["morning"], frequency: "daily")
     }
     
 }

@@ -8,7 +8,35 @@
 
 import UIKit
 
-class Zdravilo: NSCopying {
+class Zdravilo: NSObject, NSCopying, NSCoding {
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(pill_img, forKey: "pill_img")
+        aCoder.encode(box_img, forKey: "box_img")
+        aCoder.encode(lasting, forKey: "lasting")
+        aCoder.encode(dose, forKey: "dose")
+        aCoder.encode(form, forKey: "form")
+        aCoder.encode(time, forKey: "time")
+        aCoder.encode(frequency, forKey: "frequency")
+        aCoder.encode(additionalRules, forKey: "additionalRules")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let id = aDecoder.decodeInteger(forKey: "id")
+        let name = aDecoder.decodeObject(forKey: "name") as! String
+        let pill_img = aDecoder.decodeObject(forKey: "pill_img") as! String
+        let box_img = aDecoder.decodeObject(forKey: "box_img") as! String
+        let lasting = aDecoder.decodeObject(forKey: "lasting") as! DateInterval
+        let dose = aDecoder.decodeFloat(forKey: "dose")
+        let form = aDecoder.decodeObject(forKey: "form") as! String
+        let time = aDecoder.decodeObject(forKey: "time") as! [Date]
+        let frequency = aDecoder.decodeObject(forKey: "frequency") as! String
+        let additionalRules = aDecoder.decodeObject(forKey: "additionalRules") as! [String]
+        self.init(id: id, name: name, pill_img: pill_img, box_img: box_img, lasting: lasting, dose: dose, form: form, time: time, frequency: frequency, additionalRules: additionalRules)
+    }
+    
+    
     func copy(with zone: NSZone? = nil) -> Any {
         let dates = DateFormatter()
         dates.dateFormat = "dd.MM.yyyy"
@@ -21,12 +49,13 @@ class Zdravilo: NSCopying {
         for i in time {
             timeStr.append(times.string(from: i))
         }
-        let copy = Zdravilo(name: name, pill_img: pill_img, box_img: box_img, startDate: start, endDate: end, dose: dose, form: form, time: timeStr, frequency: frequency, additionalRules: additionalRules, taken: taken)
+        let copy = Zdravilo(id: id, name: name, pill_img: pill_img, box_img: box_img, startDate: start, endDate: end, dose: dose, form: form, time: timeStr, frequency: frequency, additionalRules: additionalRules)
         return copy
     }
     
     
     //MARK: Properties
+    var id: Int
     var name: String
     var pill_img: String
     var box_img: String
@@ -36,10 +65,9 @@ class Zdravilo: NSCopying {
     var time: [Date]
     var frequency: String
     var additionalRules: [String]
-    var taken: Bool = false
     
     //MARK: Initialization
-    init?(name: String, pill_img: String, box_img: String, startDate: String, endDate: String, dose: Float, form: String, time: [String], frequency: String, additionalRules: [String] = [], taken: Bool = false) {
+    init(id: Int, name: String, pill_img: String, box_img: String, startDate: String, endDate: String, dose: Float, form: String, time: [String], frequency: String, additionalRules: [String] = []) {
         /*guard !label.isEmpty else {
             return nil
         }*/
@@ -56,7 +84,7 @@ class Zdravilo: NSCopying {
             let converted: Date? = times.date(from: i)
             newTime.append(converted!)
         }
-        
+        self.id = id
         self.name = name
         self.pill_img = pill_img
         self.box_img = box_img
@@ -66,11 +94,25 @@ class Zdravilo: NSCopying {
         self.time = newTime
         self.frequency = frequency
         self.additionalRules = additionalRules
-        self.taken = taken
+    }
+    
+    init(id: Int, name: String, pill_img: String, box_img: String, lasting: DateInterval, dose: Float, form: String, time: [Date], frequency: String, additionalRules: [String] = []) {
+        
+        self.id = id
+        self.name = name
+        self.pill_img = pill_img
+        self.box_img = box_img
+        self.lasting = lasting
+        self.dose = dose
+        self.form = form
+        self.time = time
+        self.frequency = frequency
+        self.additionalRules = additionalRules
     }
 }
 
 class Zdravila {
+    
     var jutro: [Zdravilo]
     var dopoldne: [Zdravilo]
     var popoldne: [Zdravilo]
