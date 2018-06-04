@@ -18,14 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var zdravilaNeurejena = [Zdravilo]()
     let calendar = Calendar.current
     let usersData:UserDefaults = UserDefaults.standard
+    let center = UNUserNotificationCenter.current()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("granted: (\(granted)")
         }
+        center.delegate = self
+        registerCategories()
         
-        UNUserNotificationCenter.current().delegate = self
         
         let patientId = "2"
         let controlId = "1"
@@ -78,26 +80,140 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    func registerCategories() {
+        
+        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
+                                                     actions: [],
+                                                     intentIdentifiers: [],
+                                                     options: .customDismissAction)
+        
+        let snoozeAction = UNNotificationAction(identifier: "SNOOZE",
+                                                title: "Spomni me cez 5 minut",
+                                                options: UNNotificationActionOptions(rawValue: 0))
+        let stopAction = UNNotificationAction(identifier: "STOP",
+                                              title: "Vzel(a) sem tableto",
+                                              options: .foreground)
+        
+        let expiredCategory = UNNotificationCategory(identifier: "TIMER",
+                                                     actions: [snoozeAction, stopAction],
+                                                     intentIdentifiers: [],
+                                                     options: UNNotificationCategoryOptions(rawValue: 0))
+        
+        center.setNotificationCategories([generalCategory, expiredCategory])
+    }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let decoded  = usersData.object(forKey: "zdravila") as! Data
-        zdravilaNeurejena = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
-        var zdravilo: Zdravilo?
-        for i in zdravilaNeurejena {
-            if String(i.id) == response.notification.request.identifier {
-                zdravilo = i
+        response.notification.request.content.categoryIdentifier
+        switch response.actionIdentifier {
+        case UNNotificationDefaultActionIdentifier:
+            if response.notification.request.content.categoryIdentifier == "TIMER" {
+                // random click
+                let decoded  = usersData.object(forKey: "zdravila") as! Data
+                zdravilaNeurejena = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
+                var zdravilo: Zdravilo?
+                for i in zdravilaNeurejena {
+                    if String(i.id) == response.notification.request.identifier {
+                        zdravilo = i
+                    }
+                }
+                let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
+                let pillCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navodila") as! NavodilaViewController
+                let navigationCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
+                pillCTRL.zdravilo = zdravilo
+                
+                self.window?.rootViewController = navigationCTRL
+                navigationCTRL.pushViewController(pillCTRL, animated: true)
             }
+            else if response.notification.request.content.categoryIdentifier == "GENERAL" {
+                let userId = usersData.value(forKey: "controlId") as? String
+                let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
+                var dude: People?
+                do {
+                    let database = try Data(contentsOf: dataPath!)
+                    let data = try JSON(data: database)
+                    for (_, clovek) in data["starejsi"] {
+                        if (clovek["id"].stringValue == usersData.value(forKey: "patientId") as? String) {
+                            dude = dataToPeople(data: clovek)
+                        }
+                    }
+                } catch {
+                    print("Unable to read the database.")
+                }
+                
+                let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
+                let adhCTRL = mainStoryboard.instantiateViewController(withIdentifier: "adher") as! AdhViewController
+                let navigationCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi2") as! UINavigationController
+                adhCTRL.people1 = dude
+                
+                self.window?.rootViewController = navigationCTRL
+                navigationCTRL.pushViewController(adhCTRL, animated: true)
+            }
+        case "SNOOZE":
+            let content = response.notification.request.content
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+            let request = UNNotificationRequest(identifier: response.notification.request.identifier, content: content, trigger: trigger)
+            center.add(request) { error in
+                UNUserNotificationCenter.current().delegate = self
+                if (error != nil){
+                    print("error")
+                }
+            }
+            break
+        case "STOP":
+            var taken = usersData.value(forKey: "taken") as? [String: Bool]
+            var overdue = usersData.value(forKey: "overdue") as? [Int]
+            let jutro = usersData.value(forKey: "jutro") as? [Int]
+            let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
+            let popoldne = usersData.value(forKey: "popoldne") as? [Int]
+            let vecer = usersData.value(forKey: "vecer") as? [Int]
+            taken![response.notification.request.identifier] = true
+            
+            let idd = "a" + response.notification.request.identifier
+            center.removePendingNotificationRequests(withIdentifiers: [idd])
+            
+            for i in jutro! {
+                if i == Int(response.notification.request.identifier) {
+                    let newJutro = jutro?.filter { $0 != i }
+                    usersData.set(newJutro, forKey: "jutro")
+                }
+            }
+            for i in dopoldne! {
+                if i == Int(response.notification.request.identifier) {
+                    let newDop = dopoldne?.filter { $0 != i }
+                    usersData.set(newDop, forKey: "dopoldne")
+                }
+            }
+            for i in popoldne! {
+                if i == Int(response.notification.request.identifier) {
+                    let newPop = popoldne?.filter { $0 != i }
+                    usersData.set(newPop, forKey: "popoldne")
+                }
+            }
+            for i in vecer! {
+                if i == Int(response.notification.request.identifier) {
+                    let newVecer = vecer?.filter { $0 != i }
+                    usersData.set(newVecer, forKey: "vecer")
+                }
+            }
+            for i in overdue! {
+                if i == Int(response.notification.request.identifier) {
+                    let newJutro = jutro?.filter { $0 != i }
+                    usersData.set(newJutro, forKey: "overdue")
+                }
+            }
+            usersData.set(taken, forKey: "taken")
+            usersData.synchronize()
+            
+            break
+            
+        default:
+            break
         }
-        let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
-        let pillCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navodila") as! NavodilaViewController
-        let navigationCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
-        pillCTRL.zdravilo = zdravilo
-        
-        self.window?.rootViewController = navigationCTRL
-        navigationCTRL.pushViewController(pillCTRL, animated: true)
+            
         
         completionHandler()
         
@@ -115,6 +231,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 }
             }
         }
+        return result
+    }
+    
+    func dataToPeople(data: JSON) -> People {
+        var zdravila = [Zdravilo]()
+        var indeeks = 0
+        for (_, zd) in data["zdravila"] {
+            let zdravilo = dataToZdravilo2(data: zd, ind: indeeks)
+            indeeks = indeeks + 1
+            zdravila.append(zdravilo)
+        }
+        let result = People(name: data["name"].stringValue, img: data["img"].stringValue, patientId: data["id"].stringValue, zdravila: zdravila)
+        return result!
+    }
+    func dataToZdravilo2(data: JSON, ind: Int) -> Zdravilo {
+        var time: [String] = []
+        for (_, o) in data["time"] {
+            time.append(o.stringValue)
+        }
+        var additional: [String] = []
+        for (_, o2) in data["additionalRules"] {
+            additional.append(o2.stringValue)
+        }
+        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
         return result
     }
     

@@ -25,6 +25,7 @@ class NavodilaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         let dates = DateFormatter()
         dates.dateFormat = "dd.MM.yyyy"

@@ -31,6 +31,8 @@
 		E9743A0B20A9F9C600784CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0A20A9F9C600784CD9 /* Assets.xcassets */; };
 		E9743A0E20A9F9C600784CD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9743A0C20A9F9C600784CD9 /* LaunchScreen.storyboard */; };
 		E9743A1920A9F9C600784CD9 /* SkatlicaZdravilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */; };
+		E98BB4D120C55D6200239C9B /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98BB4D020C55D6200239C9B /* UserNotifications.framework */; };
+		E98BB4D320C55D6200239C9B /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98BB4D220C55D6200239C9B /* UserNotificationsUI.framework */; };
 		E99631C620B43A20000CFE2A /* adherence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99631C520B43A20000CFE2A /* adherence.storyboard */; };
 		E99631C820B4510F000CFE2A /* DanesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */; };
 		E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */; };
@@ -81,6 +83,9 @@
 		E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkatlicaZdravilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9743A1820A9F9C600784CD9 /* SkatlicaZdravilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkatlicaZdravilTests.swift; sourceTree = "<group>"; };
 		E9743A1A20A9F9C600784CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98BB4CF20C55D6200239C9B /* cusotmNotif.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = cusotmNotif.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98BB4D020C55D6200239C9B /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		E98BB4D220C55D6200239C9B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		E99631C520B43A20000CFE2A /* adherence.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = adherence.storyboard; sourceTree = "<group>"; };
 		E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewController.swift; sourceTree = "<group>"; };
 		E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +111,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E98BB4CC20C55D6200239C9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98BB4D320C55D6200239C9B /* UserNotificationsUI.framework in Frameworks */,
+				E98BB4D120C55D6200239C9B /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */,
+				E98BB4D020C55D6200239C9B /* UserNotifications.framework */,
+				E98BB4D220C55D6200239C9B /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,6 +195,7 @@
 			children = (
 				E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */,
 				E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */,
+				E98BB4CF20C55D6200239C9B /* cusotmNotif.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +273,23 @@
 			productReference = E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E98BB4CE20C55D6200239C9B /* cusotmNotif */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E98BB4DE20C55D6200239C9B /* Build configuration list for PBXNativeTarget "cusotmNotif" */;
+			buildPhases = (
+				E98BB4CB20C55D6200239C9B /* Sources */,
+				E98BB4CC20C55D6200239C9B /* Frameworks */,
+				E98BB4CD20C55D6200239C9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cusotmNotif;
+			productName = cusotmNotif;
+			productReference = E98BB4CF20C55D6200239C9B /* cusotmNotif.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,6 +306,9 @@
 					E9743A1320A9F9C600784CD9 = {
 						CreatedOnToolsVersion = 9.3;
 						TestTargetID = E97439FF20A9F9C400784CD9;
+					};
+					E98BB4CE20C55D6200239C9B = {
+						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
@@ -290,6 +327,7 @@
 			targets = (
 				E97439FF20A9F9C400784CD9 /* SkatlicaZdravil */,
 				E9743A1320A9F9C600784CD9 /* SkatlicaZdravilTests */,
+				E98BB4CE20C55D6200239C9B /* cusotmNotif */,
 			);
 		};
 /* End PBXProject section */
@@ -312,6 +350,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E9743A1220A9F9C600784CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E98BB4CD20C55D6200239C9B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,6 +437,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9743A1920A9F9C600784CD9 /* SkatlicaZdravilTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E98BB4CB20C55D6200239C9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +671,44 @@
 			};
 			name = Release;
 		};
+		E98BB4DF20C55D6200239C9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = cusotmNotif/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil.cusotmNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E98BB4E020C55D6200239C9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = cusotmNotif/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil.cusotmNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -645,6 +735,15 @@
 			buildConfigurations = (
 				E9743A2120A9F9C600784CD9 /* Debug */,
 				E9743A2220A9F9C600784CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E98BB4DE20C55D6200239C9B /* Build configuration list for PBXNativeTarget "cusotmNotif" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E98BB4DF20C55D6200239C9B /* Debug */,
+				E98BB4E020C55D6200239C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

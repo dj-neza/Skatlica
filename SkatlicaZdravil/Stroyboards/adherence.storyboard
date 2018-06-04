@@ -139,7 +139,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cdk-bZ-vMW">
             <objects>
-                <navigationController id="bcC-oj-grM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navi2" id="bcC-oj-grM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1MO-AA-CpO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -631,7 +631,7 @@
         <!--Adherenca-->
         <scene sceneID="zKh-8D-aKY">
             <objects>
-                <viewController id="r4B-Y4-NvG" customClass="AdhViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="adher" id="r4B-Y4-NvG" customClass="AdhViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ge-Qw-afL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

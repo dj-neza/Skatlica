@@ -30,6 +30,8 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Danasnja zdravila", style: .plain, target: nil, action: nil)
+        
         //UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         //UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         //configureReminders()
@@ -134,9 +136,9 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
         do {
             let database = try Data(contentsOf: dataPath!)
-            let data = try JSON(data: database)
+            let data1 = try JSON(data: database)
             var indeeks = 0
-            for (_, object) in data["starejsi"] {
+            for (_, object) in data1["starejsi"] {
                 if (object["id"].stringValue == userId) {
                     for (_, data) in object["zdravila"] {
                         for (_, o) in data["time"] {
@@ -145,6 +147,12 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                             content.title   = "Vzemi zdravilo "
                             content.body = data["name"].stringValue + " " + data["dose"].stringValue + data["form"].stringValue
                             content.sound = UNNotificationSound.default()
+                            content.categoryIdentifier = "TIMER"
+                            let img = UIImage(named: data["pill_img"].stringValue)
+                            
+                            if let attachement = UNNotificationAttachment.create(identifier: "img", image: img!, options: nil) {
+                                content.attachments = [attachement]
+                            }
                             var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSinceNow: 86400))
                             let times = DateFormatter()
                             times.dateFormat = "HH:mm"
@@ -153,10 +161,24 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                             dateComponents.hour = dateComponents2.hour
                             dateComponents.minute = dateComponents2.minute
                             print(dateComponents)
-                            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                            let request = UNNotificationRequest(identifier: String(indeeks), content: content, trigger: trigger)
+                            
+                            var trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                            var request = UNNotificationRequest(identifier: String(indeeks), content: content, trigger: trigger)
                             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                             
+                            
+                            //Skrbnik notification
+                            
+                            content.title   = "Zamujeno zdravilo"
+                            content.body = object["name"].stringValue + " ni vzel(a) zdravila: " + data["name"].stringValue + " ob " + o.stringValue
+                            content.categoryIdentifier = "GENERAL"
+                            content.attachments = []
+                            dateComponents.minute = dateComponents.minute! + 30
+                            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                            let idd = "a"+String(indeeks)
+                            request = UNNotificationRequest(identifier: idd, content: content, trigger: trigger)
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                           
                             indeeks = indeeks + 1
                         }
                     }
@@ -169,7 +191,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     @objc func config() {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        //UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         configureTodayPills()
         configureReminders()
     }
@@ -331,5 +353,28 @@ extension TodayPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
     
+}
+
+extension UNNotificationAttachment {
+    
+    static func create(identifier: String, image: UIImage, options: [NSObject : AnyObject]?) -> UNNotificationAttachment? {
+        let fileManager = FileManager.default
+        let tmpSubFolderName = ProcessInfo.processInfo.globallyUniqueString
+        let tmpSubFolderURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(tmpSubFolderName, isDirectory: true)
+        do {
+            try fileManager.createDirectory(at: tmpSubFolderURL, withIntermediateDirectories: true, attributes: nil)
+            let imageFileIdentifier = identifier+".png"
+            let fileURL = tmpSubFolderURL.appendingPathComponent(imageFileIdentifier)
+            guard let imageData = UIImagePNGRepresentation(image) else {
+                return nil
+            }
+            try imageData.write(to: fileURL)
+            let imageAttachment = try UNNotificationAttachment.init(identifier: imageFileIdentifier, url: fileURL, options: options)
+            return imageAttachment
+        } catch {
+            print("error " + error.localizedDescription)
+        }
+        return nil
+    }
 }
 

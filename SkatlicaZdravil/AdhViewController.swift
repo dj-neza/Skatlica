@@ -38,12 +38,23 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let currentTime = Date()
         let hour = calendar.component(.hour, from: currentTime)
         
+        dueData = [Int]()
+        var duePills = 0
         for i in zdravila {
             let hour1 = calendar.component(.hour, from: i.time[0])
-            if (hour1 < hour && taken![String(i.id)] == false) {
-                dueData.append(i.id)
+            if (hour1 < hour) {
+                duePills = duePills+1
+                if (taken![String(i.id)] == false) {
+                    dueData.append(i.id)
+                }
             }
         }
+        print(taken)
+        print(dueData)
+        print(zdravila)
+        due.reloadData()
+        let adherenca = 100 - ((dueData.count * 100)/duePills)
+        self.adh.text = String(adherenca) + " %"
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,8 +72,7 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let overdue = usersData.value(forKey: "overdue") as? [Int]
-        return (overdue?.count)!
+        return (dueData.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
