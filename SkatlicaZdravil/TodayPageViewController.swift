@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 import SwiftyJSON
+import UserNotifications
 
 class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegate {
 
@@ -29,7 +30,11 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(configureTodayPills), name: notification, object: nil)
+        //UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        //UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        //configureReminders()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(config), name: notification, object: nil)
         
         let decoded  = usersData.object(forKey: "zdravila") as! Data
         zdravilaNeurejena = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
@@ -124,7 +129,52 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         return [page1, page2, page3, page4]
     }
     
-    @objc func configureTodayPills() {
+    func configureReminders() {
+        let userId = usersData.value(forKey: "patientId") as? String
+        let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
+        do {
+            let database = try Data(contentsOf: dataPath!)
+            let data = try JSON(data: database)
+            var indeeks = 0
+            for (_, object) in data["starejsi"] {
+                if (object["id"].stringValue == userId) {
+                    for (_, data) in object["zdravila"] {
+                        for (_, o) in data["time"] {
+                            
+                            let content = UNMutableNotificationContent()
+                            content.title   = "Vzemi zdravilo "
+                            content.body = data["name"].stringValue + " " + data["dose"].stringValue + data["form"].stringValue
+                            content.sound = UNNotificationSound.default()
+                            var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSinceNow: 86400))
+                            let times = DateFormatter()
+                            times.dateFormat = "HH:mm"
+                            let converted: Date = times.date(from: o.stringValue)!
+                            var dateComponents2 = Calendar.current.dateComponents([.hour, .minute], from: converted)
+                            dateComponents.hour = dateComponents2.hour
+                            dateComponents.minute = dateComponents2.minute
+                            print(dateComponents)
+                            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                            let request = UNNotificationRequest(identifier: String(indeeks), content: content, trigger: trigger)
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                            
+                            indeeks = indeeks + 1
+                        }
+                    }
+                }
+            }
+            
+        } catch {
+            print("Unable to read the database.")
+        }
+    }
+    @objc func config() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        configureTodayPills()
+        configureReminders()
+    }
+    
+    func configureTodayPills() {
         zdravilaNeurejena = [Zdravilo]()
         let userId = usersData.value(forKey: "patientId") as? String
         let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")

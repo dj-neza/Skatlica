@@ -8,21 +8,28 @@
 
 import UIKit
 import SwiftyJSON
+import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var zdravilaNeurejena = [Zdravilo]()
     let calendar = Calendar.current
+    let usersData:UserDefaults = UserDefaults.standard
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("granted: (\(granted)")
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         let patientId = "2"
         let controlId = "1"
-            
-        var usersData:UserDefaults = UserDefaults.standard
+        
         usersData.set(patientId, forKey: "patientId")
         usersData.set(controlId, forKey: "controlId")
         usersData.synchronize()
@@ -69,6 +76,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let decoded  = usersData.object(forKey: "zdravila") as! Data
+        zdravilaNeurejena = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
+        var zdravilo: Zdravilo?
+        for i in zdravilaNeurejena {
+            if String(i.id) == response.notification.request.identifier {
+                zdravilo = i
+            }
+        }
+        let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
+        let pillCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navodila") as! NavodilaViewController
+        let navigationCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
+        pillCTRL.zdravilo = zdravilo
+        
+        self.window?.rootViewController = navigationCTRL
+        navigationCTRL.pushViewController(pillCTRL, animated: true)
+        
+        completionHandler()
+        
     }
     
     func zdravilaRazporedi(timeStart: Int, timeEnd: Int) -> [Int] {
