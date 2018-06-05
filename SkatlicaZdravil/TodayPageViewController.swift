@@ -16,9 +16,9 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     @IBOutlet weak var pageTitle: UINavigationItem!
     @IBOutlet weak var nazajButt: UIBarButtonItem!
     @IBOutlet weak var naprejButt: UIBarButtonItem!
-    let nazajNames = ["", "Zjutraj", "Dopoldne", "Popoldne"]
-    let naprejNames = ["Dopoldne", "Popoldne", "Zvecer", ""]
-    let titleNames = ["Zjutraj", "Dopoldne", "Popoldne", "Zvecer"]
+    let nazajNames = ["", "Jutro", "Dopoldne", "Popoldne"]
+    let naprejNames = ["Dopoldne", "Popoldne", "Vecer", ""]
+    let titleNames = ["Jutranja zdravila", "Dopoldanska zdravila", "Popoldanska zdravila", "Vecerna zdravila"]
     let calendar = Calendar.current
     let usersData:UserDefaults = UserDefaults.standard
     
@@ -83,7 +83,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                            direction: .forward,
                            animated: true,
                            completion: nil)
-        //configurePageControl(activePage: firstViewController)
+        configurePageControl(activePage: firstViewController)
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,7 +95,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         let nazaj = pageViewController(self, viewControllerBefore: self.viewControllers![0])
         if (nazaj != nil) {
             setViewControllers([nazaj!], direction: .reverse, animated: true, completion: nil)
-            //configurePageControl(activePage: nazaj!)
+            configurePageControl(activePage: nazaj!)
         }
     }
     
@@ -103,7 +103,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
         let naprej = pageViewController(self, viewControllerAfter: self.viewControllers![0])
         if (naprej != nil) {
             setViewControllers([naprej!], direction: .forward, animated: true, completion: nil)
-            //configurePageControl(activePage: naprej!)
+            configurePageControl(activePage: naprej!)
         }
     }
     
@@ -153,10 +153,10 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                             if let attachement = UNNotificationAttachment.create(identifier: "img", image: img!, options: nil) {
                                 content.attachments = [attachement]
                             }
-                            var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSinceNow: 86400))
+                            var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())//timeIntervalSinceNow: 86400))
                             let times = DateFormatter()
                             times.dateFormat = "HH:mm"
-                            let converted: Date = times.date(from: o.stringValue)!
+                            let converted: Date = times.date(from: "14:52")!//o.stringValue)!
                             var dateComponents2 = Calendar.current.dateComponents([.hour, .minute], from: converted)
                             dateComponents.hour = dateComponents2.hour
                             dateComponents.minute = dateComponents2.minute

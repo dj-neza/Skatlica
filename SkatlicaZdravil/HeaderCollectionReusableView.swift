@@ -11,12 +11,13 @@ import UIKit
 class HeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var headerButton: UIButton!
-    
-}
+    @IBOutlet weak var imaag: UIImageView!
+    }
 
-class FooterCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var forward: UIButton!
-    
-    
+class navigation: UINavigationController {
+    override func viewDidAppear(_ animated: Bool) {
+        let height: CGFloat = 100 //whatever height you want to add to the existing height
+        let bounds = self.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
+    }
 }

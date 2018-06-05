@@ -26,12 +26,10 @@ final class DanesCollectionViewController: UICollectionViewController {
         if (open == false) {
             open = true
             self.collectionView?.reloadData()
-            //sender.titleLabel?.text = "Skrij zamujena zdravila"
         }
         else {
             open = false
             self.collectionView?.reloadData()
-            //sender.titleLabel?.text = "Prikazi zamujena zdravila"
         }
     }
     
@@ -48,7 +46,7 @@ final class DanesCollectionViewController: UICollectionViewController {
             let indexPath: IndexPath = (collectionView?.indexPathsForSelectedItems![0])!
             let destViewController = segue.destination as? NavodilaViewController
             var zdravilo: Zdravilo?
-            if (numberOfSections(in: collectionView!) == 1 || indexPath.section == 1) {
+            if (indexPath.section == 0) {
                 zdravilo = zdraviloForIndexPath(indexPath)
             }
             else {
@@ -121,7 +119,7 @@ extension DanesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         var result: Int
-        if (numberOfSections(in: collectionView) == 1 || section == 1) {
+        if (section == 0) {
             let jutro = usersData.value(forKey: "jutro") as? [Int]
             let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
             let popoldne = usersData.value(forKey: "popoldne") as? [Int]
@@ -135,9 +133,6 @@ extension DanesCollectionViewController {
                 result = popoldne!.count
             default:
                 result = vecer!.count
-            }
-            if (result < 5) {
-                itemsPerRow = 2
             }
         }
         else {
@@ -159,14 +154,26 @@ extension DanesCollectionViewController {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-            if (collectionView.numberOfItems(inSection: indexPath.section) != 0) {
-                headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .normal)
-                headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .highlighted)
+            if (indexPath.section == 0) {
+                headerView.imaag.image = UIImage(named: "question")
+                headerView.headerButton.setTitle("Za navodila klikni zdravilo", for: .normal)
+                headerView.headerButton.setTitle("Za navodila klikni zdravilo", for: .highlighted)
+                headerView.backgroundColor = UIColor.white
             }
             else {
-                headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .normal)
-                headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .highlighted)
+                headerView.backgroundColor = UIColor(red:0.69, green:0.85, blue:0.92, alpha:1.0)
+                if (collectionView.numberOfItems(inSection: indexPath.section) != 0) {
+                    headerView.imaag.image = UIImage(named: "up")
+                    headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .normal)
+                    headerView.headerButton.setTitle("Skrij zamujena zdravila", for: .highlighted)
+                }
+                else {
+                    headerView.imaag.image = UIImage(named: "down")
+                    headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .normal)
+                    headerView.headerButton.setTitle("Prikazi zamujena zdravila", for: .highlighted)
+                }
             }
+        
             return headerView
             
         default:
@@ -184,15 +191,17 @@ extension DanesCollectionViewController {
             cell.pill_name.text = zdravilo.name
         }
         else {
-            if (indexPath.section == 0) {
+            if (indexPath.section == 1) {
                 let zdravilo = overdueForIndexPath(indexPath)
                 cell.pill_image.image = UIImage(named: zdravilo.pill_img)
                 cell.pill_name.text = zdravilo.name
+                cell.backgroundColor = UIColor(red:1.00, green:0.83, blue:0.07, alpha:0.75)
             }
             else {
                 let zdravilo = zdraviloForIndexPath(indexPath)
                 cell.pill_image.image = UIImage(named: zdravilo.pill_img)
                 cell.pill_name.text = zdravilo.name
+                cell.backgroundColor = UIColor.white
             }
         }
         return cell
@@ -204,11 +213,29 @@ extension DanesCollectionViewController : UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let count = collectionView.numberOfItems(inSection: indexPath.section)
-        if (count < 5) {
-            itemsPerRow = 2
+        if (indexPath.section == 1) {
+            if (count < 3) {
+                itemsPerRow = 2
+            }
+            else {
+                itemsPerRow = 3
+            }
+        }
+        else if (collectionView.numberOfSections == 2) {
+            if (count < 3) {
+                itemsPerRow = 2
+            }
+            else {
+                itemsPerRow = 3
+            }
         }
         else {
-            itemsPerRow = 3
+            if (count < 5) {
+                itemsPerRow = 2
+            }
+            else {
+                itemsPerRow = 3
+            }
         }
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
@@ -228,14 +255,14 @@ extension DanesCollectionViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceSizeForHeaderInSection: Int) -> CGSize {
+    /*func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, referenceSizeForHeaderInSection: Int) -> CGSize {
         if (numberOfSections(in: collectionView) == 1 || referenceSizeForHeaderInSection == 1) {
             return CGSize(width: 0, height: 0)
         }
         else {
             return CGSize(width: collectionView.frame.size.width, height: 50)
         }
-    }
+    }*/
 }
 
 

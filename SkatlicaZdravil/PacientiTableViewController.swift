@@ -20,6 +20,7 @@ class PacientiTableViewController: UITableViewController {
 
         loadPeople()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

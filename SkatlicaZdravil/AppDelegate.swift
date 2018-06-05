@@ -132,6 +132,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         switch response.actionIdentifier {
         case UNNotificationDefaultActionIdentifier:
             if response.notification.request.content.categoryIdentifier == "TIMER" {
+                let content = response.notification.request.content
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
+                let request = UNNotificationRequest(identifier: response.notification.request.identifier, content: content, trigger: trigger)
                 // random click
                 let decoded  = usersData.object(forKey: "zdravila") as! Data
                 zdravilaNeurejena = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
@@ -145,6 +148,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 let pillCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navodila") as! NavodilaViewController
                 let navigationCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
                 pillCTRL.zdravilo = zdravilo
+                
+                center.add(request, withCompletionHandler: nil)
                 
                 self.window?.rootViewController = navigationCTRL
                 navigationCTRL.pushViewController(pillCTRL, animated: true)
@@ -324,8 +329,8 @@ final class FirstLaunch {
     
     let wasLaunchedBefore: Bool
     var isFirstLaunch: Bool {
-        return true
-        //return !wasLaunchedBefore
+        //return true
+        return !wasLaunchedBefore
     }
     
     init() {
