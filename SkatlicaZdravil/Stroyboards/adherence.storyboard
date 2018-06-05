@@ -80,6 +80,50 @@
             </objects>
             <point key="canvasLocation" x="-498.39999999999998" y="173.16341829085459"/>
         </scene>
+        <!--Id View Controller-->
+        <scene sceneID="Eaj-Nf-Pht">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2u-1Q-l1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="iding" id="F8x-Kv-RR2" customClass="idViewController" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TYE-bH-Fgh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-7T-Izz">
+                                <rect key="frame" x="167" y="293" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Potrdi"/>
+                                <connections>
+                                    <action selector="vnosId:" destination="F8x-Kv-RR2" eventType="touchUpInside" id="PMs-6M-zO5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="identifikacijska stevilka" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtL-LU-c2e">
+                                <rect key="frame" x="16" y="242" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vnesi identifikacijsko številko:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-v4-C2m">
+                                <rect key="frame" x="74" y="192" width="226" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="idu-R3-xWH"/>
+                    </view>
+                    <connections>
+                        <outlet property="id" destination="mtL-LU-c2e" id="rVN-YY-JyK"/>
+                        <segue destination="bcC-oj-grM" kind="show" identifier="skrbnik" id="Rv1-SQ-WfU"/>
+                        <segue destination="oPZ-7S-vOr" kind="show" identifier="pacient" id="BdT-Uq-SXq"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-927.20000000000005" y="976.46176911544239"/>
+        </scene>
         <!--Pacienti-->
         <scene sceneID="0gp-Mb-t5l">
             <objects>
@@ -779,4 +823,8 @@
     <resources>
         <image name="unavailable" width="533" height="534"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BdT-Uq-SXq"/>
+        <segue reference="Rv1-SQ-WfU"/>
+    </inferredMetricsTieBreakers>
 </document>

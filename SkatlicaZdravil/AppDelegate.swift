@@ -29,17 +29,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         registerCategories()
         
         
-        let patientId = "2"
+        /*let patientId = "2"
         let controlId = "1"
         
         usersData.set(patientId, forKey: "patientId")
         usersData.set(controlId, forKey: "controlId")
+        usersData.synchronize()*/
+        usersData.set(false, forKey: "isPatient")
         usersData.synchronize()
-        
         let firstLaunch = FirstLaunch()
         if firstLaunch.isFirstLaunch {
             print("first launch")
-            zdravilaNeurejena = [Zdravilo]()
+            
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
+            let idCTRL = mainStoryboard.instantiateViewController(withIdentifier: "iding") as! idViewController
+            
+            self.window?.rootViewController = idCTRL
+            
+            /*zdravilaNeurejena = [Zdravilo]()
             let userId = usersData.value(forKey: "patientId") as? String
             let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
             do {
@@ -74,7 +81,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             } catch {
                 print("Unable to read the database.")
             }
-            usersData.synchronize()
+            usersData.synchronize()*/
+        }
+        else {
+            let iss = usersData.value(forKey: "isPatient") as? Bool
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "adherence", bundle: nil)
+            if iss! {
+                let naviCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
+                
+                self.window?.rootViewController = naviCTRL
+            }
+            else {
+                let naviCTRL = mainStoryboard.instantiateViewController(withIdentifier: "navi2") as! UINavigationController
+                
+                self.window?.rootViewController = naviCTRL
+            }
         }
         
         return true
@@ -154,7 +175,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         case "SNOOZE":
             let content = response.notification.request.content
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
             let request = UNNotificationRequest(identifier: response.notification.request.identifier, content: content, trigger: trigger)
             center.add(request) { error in
                 UNUserNotificationCenter.current().delegate = self
@@ -219,7 +240,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
     }
     
-    func zdravilaRazporedi(timeStart: Int, timeEnd: Int) -> [Int] {
+    /*func zdravilaRazporedi(timeStart: Int, timeEnd: Int) -> [Int] {
         var result = [Int]()
         for i in zdravilaNeurejena {
             let currentDay = Date()
@@ -232,7 +253,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         return result
-    }
+    }*/
     
     func dataToPeople(data: JSON) -> People {
         var zdravila = [Zdravilo]()
@@ -258,7 +279,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return result
     }
     
-    func dataToZdravilo(data: JSON, ind: Int) -> Int {
+    /*func dataToZdravilo(data: JSON, ind: Int) -> Int {
         var indeeks = ind
         var additional: [String] = []
         for (_, o2) in data["additionalRules"] {
@@ -270,7 +291,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             self.zdravilaNeurejena.append(zdravilo)
         }
         return indeeks
-    }
+    }*/
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -303,8 +324,8 @@ final class FirstLaunch {
     
     let wasLaunchedBefore: Bool
     var isFirstLaunch: Bool {
-        //return true
-        return !wasLaunchedBefore
+        return true
+        //return !wasLaunchedBefore
     }
     
     init() {

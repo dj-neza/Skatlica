@@ -12,6 +12,8 @@ import SwiftyJSON
 class PacientiTableViewController: UITableViewController {
 
     var people = [People]()
+    var zdravilaUD = [Zdravilo]()
+    let usersData:UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +49,8 @@ class PacientiTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func loadPeople() {
-        let usersData:UserDefaults = UserDefaults.standard
         let userId = usersData.value(forKey: "controlId") as? String
+        print(userId)
         let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
         do {
             let database = try Data(contentsOf: dataPath!)
@@ -79,12 +81,27 @@ class PacientiTableViewController: UITableViewController {
     
     func dataToPeople(data: JSON) -> People {
         var zdravila = [Zdravilo]()
+        zdravilaUD = [Zdravilo]()
+        var takenBase = [String : Bool]()
         var indeeks = 0
+        var ind = 0
         for (_, zd) in data["zdravila"] {
             let zdravilo = dataToZdravilo(data: zd, ind: indeeks)
+            ind = dataToZdravilo2(data: zd, ind: ind)
             indeeks = indeeks + 1
             zdravila.append(zdravilo)
         }
+        for l in 0...ind {
+            takenBase[String(l)] = false
+        }
+        let idd = data["id"].stringValue + "_zdravila"
+        let idd2 = data["id"].stringValue + "_taken"
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: zdravilaUD)
+        usersData.set(encodedData, forKey: idd)
+        usersData.set(takenBase, forKey: idd2)
+        usersData.synchronize()
+        print(zdravila)
+        print(zdravilaUD)
         let result = People(name: data["name"].stringValue, img: data["img"].stringValue, patientId: data["id"].stringValue, zdravila: zdravila)
         return result!
     }
@@ -99,6 +116,19 @@ class PacientiTableViewController: UITableViewController {
         }
         let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
         return result
+    }
+    func dataToZdravilo2(data: JSON, ind: Int) -> Int {
+        var indeeks = ind
+        var additional: [String] = []
+        for (_, o2) in data["additionalRules"] {
+            additional.append(o2.stringValue)
+        }
+        for (_, o) in data["time"] {
+            let zdravilo = Zdravilo(id: indeeks, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: [o.stringValue], frequency: data["frequency"].stringValue, additionalRules: additional)
+            indeeks = indeeks + 1
+            self.zdravilaUD.append(zdravilo)
+        }
+        return indeeks
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

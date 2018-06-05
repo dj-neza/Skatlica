@@ -21,6 +21,7 @@
 		E94CAF8D20BC2EE5000D088A /* controlDrug.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8A20BC2EE5000D088A /* controlDrug.json */; };
 		E94CAF8E20BC2EE5000D088A /* tapering.json in Resources */ = {isa = PBXBuildFile; fileRef = E94CAF8B20BC2EE5000D088A /* tapering.json */; };
 		E94D290C20B886C700FDB7BA /* PillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D290B20B886C700FDB7BA /* PillViewController.swift */; };
+		E95F20CF20C5F5E3008DB7BA /* idViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F20CE20C5F5E3008DB7BA /* idViewController.swift */; };
 		E962423520B833E2000DA49B /* NavodilaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962423420B833E2000DA49B /* NavodilaViewController.swift */; };
 		E9685EE220BCC5FF009DA1D7 /* PacientiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */; };
 		E9685EE420BCC93F009DA1D7 /* AdhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */; };
@@ -69,6 +70,7 @@
 		E94CAF8A20BC2EE5000D088A /* controlDrug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = controlDrug.json; sourceTree = "<group>"; };
 		E94CAF8B20BC2EE5000D088A /* tapering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tapering.json; sourceTree = "<group>"; };
 		E94D290B20B886C700FDB7BA /* PillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillViewController.swift; sourceTree = "<group>"; };
+		E95F20CE20C5F5E3008DB7BA /* idViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idViewController.swift; sourceTree = "<group>"; };
 		E962423420B833E2000DA49B /* NavodilaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavodilaViewController.swift; sourceTree = "<group>"; };
 		E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientiTableViewController.swift; sourceTree = "<group>"; };
 		E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				E9685EE120BCC5FF009DA1D7 /* PacientiTableViewController.swift */,
 				E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */,
 				E999260320C2E04A00DC6177 /* PopupViewController.swift */,
+				E95F20CE20C5F5E3008DB7BA /* idViewController.swift */,
 			);
 			path = SkatlicaZdravil;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				E93CDE0B20ADAAFD00DBFA48 /* Zdravilo.swift in Sources */,
 				E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */,
 				E9FFCF2820B55CDD00EDCA23 /* TodayPageViewController.swift in Sources */,
+				E95F20CF20C5F5E3008DB7BA /* idViewController.swift in Sources */,
 				E9685EE220BCC5FF009DA1D7 /* PacientiTableViewController.swift in Sources */,
 				E93CDE0320AD73CA00DBFA48 /* ProfileTableViewController.swift in Sources */,
 				E93CDE0F20AEF6E000DBFA48 /* DodajanjeViewController.swift in Sources */,

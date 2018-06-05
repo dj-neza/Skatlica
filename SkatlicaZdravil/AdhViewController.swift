@@ -21,6 +21,8 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let calendar = Calendar.current
     var dueData = [Int]()
     var zdravila = [Zdravilo]()
+    var zdravilaId: String?
+    var takenId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,13 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.name.text = people1?.name
         self.peopleId.text = "Id: " + (people1?.patientId)!
         self.adh.text = "100 %"
+        zdravilaId = (people1?.patientId)! + "_zdravila"
+        takenId = (people1?.patientId)! + "_taken"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let taken = usersData.value(forKey: "taken") as? [String: Bool]
-        let decoded  = usersData.object(forKey: "zdravila") as! Data
+        let decoded  = usersData.object(forKey: zdravilaId!) as! Data
         zdravila = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
         let currentTime = Date()
         let hour = calendar.component(.hour, from: currentTime)
@@ -49,11 +53,11 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 }
             }
         }
-        print(taken)
-        print(dueData)
-        print(zdravila)
         due.reloadData()
-        let adherenca = 100 - ((dueData.count * 100)/duePills)
+        var adherenca = 100
+        if (duePills != 0) {
+            adherenca = 100 - ((dueData.count * 100)/duePills)
+        }
         self.adh.text = String(adherenca) + " %"
     }
 
