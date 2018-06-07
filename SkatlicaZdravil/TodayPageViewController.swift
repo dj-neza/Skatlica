@@ -144,8 +144,8 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                         for (_, o) in data["time"] {
                             
                             let content = UNMutableNotificationContent()
-                            content.title   = "Vzemi zdravilo "
-                            content.body = data["name"].stringValue + " " + data["dose"].stringValue + data["form"].stringValue
+                            content.title   = "Vzemi " + data["name"].stringValue + " " + data["dose"].stringValue + " " + data["form"].stringValue
+                            content.body = data["motivation"].stringValue
                             content.sound = UNNotificationSound.default()
                             content.categoryIdentifier = "TIMER"
                             let img = UIImage(named: data["pill_img"].stringValue)
@@ -156,11 +156,10 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
                             var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())//timeIntervalSinceNow: 86400))
                             let times = DateFormatter()
                             times.dateFormat = "HH:mm"
-                            let converted: Date = times.date(from: "14:52")!//o.stringValue)!
+                            let converted: Date = times.date(from: o.stringValue)!
                             var dateComponents2 = Calendar.current.dateComponents([.hour, .minute], from: converted)
                             dateComponents.hour = dateComponents2.hour
                             dateComponents.minute = dateComponents2.minute
-                            print(dateComponents)
                             
                             var trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
                             var request = UNNotificationRequest(identifier: String(indeeks), content: content, trigger: trigger)
@@ -257,7 +256,7 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
             additional.append(o2.stringValue)
         }
         for (_, o) in data["time"] {
-            let zdravilo = Zdravilo(id: indeeks, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: [o.stringValue], frequency: data["frequency"].stringValue, additionalRules: additional)
+            let zdravilo = Zdravilo(id: indeeks, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].stringValue, form: data["form"].stringValue, time: [o.stringValue], frequency: data["frequency"].stringValue, additionalRules: additional)
             indeeks = indeeks + 1
             self.zdravilaNeurejena.append(zdravilo)
         }

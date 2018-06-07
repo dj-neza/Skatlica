@@ -58,7 +58,7 @@ class ZdraviloTableViewController: UITableViewController {
         formatter.dateFormat = "dd.MM.yyyy"
         let startDate1: String = formatter.string(from: startDate)
         let endDate1: String = formatter.string(from: endDate)
-        let zdravilo1 = Zdravilo(id: 123, name: "zdravilo123", pill_img: pill1, box_img: pill2, startDate: startDate1, endDate: endDate1, dose: 1.0, form: "pill", time: ["evening"], frequency: "weekly", additionalRules: ["lala", "vzemi ko bos lacen"]) 
+        let zdravilo1 = Zdravilo(id: 123, name: "zdravilo123", pill_img: pill1, box_img: pill2, startDate: startDate1, endDate: endDate1, dose: "1.0", form: "pill", time: ["evening"], frequency: "weekly", additionalRules: ["lala", "vzemi ko bos lacen"]) 
         
         zdravila += [zdravilo1]
     }

@@ -39,7 +39,7 @@ class PillViewController: UIViewController {
         
         self.pill_name.title = zdravilo?.name
         self.pill_dates.text = start + " - " + end
-        self.pill_q_unit.text = String(format: "%.2f", (zdravilo?.dose)!) + " " + (zdravilo?.form)!
+        self.pill_q_unit.text = (zdravilo?.dose)! + " " + (zdravilo?.form)!
         self.frequency.text = zdravilo?.frequency
         self.pill_time.text = arrayToString(additional: timeStr)
         self.extra_info.text = arrayToString(additional: (zdravilo?.additionalRules)!)

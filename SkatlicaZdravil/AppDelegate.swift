@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            print("granted: (\(granted)")
+            print("granted: \(granted)")
         }
         center.delegate = self
         registerCategories()
@@ -35,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         usersData.set(patientId, forKey: "patientId")
         usersData.set(controlId, forKey: "controlId")
         usersData.synchronize()*/
-        usersData.set(false, forKey: "isPatient")
+        //usersData.set(false, forKey: "isPatient")
+        //usersData.set(["0": false, "1": true, "2": false, "3": false], forKey: "taken")
         usersData.synchronize()
         let firstLaunch = FirstLaunch()
         if firstLaunch.isFirstLaunch {
@@ -128,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        response.notification.request.content.categoryIdentifier
+        //response.notification.request.content.categoryIdentifier
         switch response.actionIdentifier {
         case UNNotificationDefaultActionIdentifier:
             if response.notification.request.content.categoryIdentifier == "TIMER" {
@@ -155,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 navigationCTRL.pushViewController(pillCTRL, animated: true)
             }
             else if response.notification.request.content.categoryIdentifier == "GENERAL" {
-                let userId = usersData.value(forKey: "controlId") as? String
+                //let userId = usersData.value(forKey: "controlId") as? String
                 let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
                 var dude: People?
                 do {
@@ -191,7 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             break
         case "STOP":
             var taken = usersData.value(forKey: "taken") as? [String: Bool]
-            var overdue = usersData.value(forKey: "overdue") as? [Int]
+            let overdue = usersData.value(forKey: "overdue") as? [Int]
             let jutro = usersData.value(forKey: "jutro") as? [Int]
             let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
             let popoldne = usersData.value(forKey: "popoldne") as? [Int]
@@ -280,7 +281,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         for (_, o2) in data["additionalRules"] {
             additional.append(o2.stringValue)
         }
-        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
+        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].stringValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
         return result
     }
     
@@ -329,8 +330,8 @@ final class FirstLaunch {
     
     let wasLaunchedBefore: Bool
     var isFirstLaunch: Bool {
-        //return true
-        return !wasLaunchedBefore
+        return true
+        //return !wasLaunchedBefore
     }
     
     init() {

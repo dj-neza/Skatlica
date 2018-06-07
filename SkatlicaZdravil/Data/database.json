@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Janez Novak",
-      "img": "janez",
+      "img": "male",
       "zdravila": [
           {
             "name": "Paracetamol",
@@ -11,18 +11,19 @@
             "box_img": "paracetamol_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
-            "dose": 1,
+            "dose": "1x",
             "form": "50mg tablet",
             "time": ["08:00", "12:15", "18:30"],
-            "frequency": "daily",
-            "additionalRules" : ["na prazen želodec", "pred obrokom"]
+            "frequency": "dnevno",
+            "additionalRules" : ["na prazen želodec", "pred obrokom"],
+            "motivation": "za glavobol in vrocino"
           }
       ]
     },
     {
       "id": "2",
       "name": "Tina Horvat",
-      "img": "tina",
+      "img": "female",
       "zdravila": [
           {
             "name": "Warfarin",
@@ -30,11 +31,12 @@
             "box_img": "warfarin_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
-            "dose": 2,
-            "form": "capsule",
-                   "time": ["11:15", "15:30"],
-            "frequency": "daily",
-            "additionalRules" : ["s tekočino", "med obrokom"]
+            "dose": "2",
+            "form": "tablete",
+                   "time": ["10:15", "12:27"],
+            "frequency": "dnevno",
+            "additionalRules" : ["s tekocino", "med obrokom"],
+            "motivation": "proti strjevanju krvi"
           },
           {
             "name": "Morphine",
@@ -42,18 +44,19 @@
             "box_img": "morphine5_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
-            "dose": 1,
-            "form": "capsule",
+            "dose": "1",
+            "form": "kapsule",
             "time": ["08:30", "20:30"],
-            "frequency": "daily",
-            "additionalRules" : ["s tekočino"]
+            "frequency": "dnevno",
+            "additionalRules" : ["s tekocino"],
+            "motivation": "za bolecine"
           }
       ]
     },
     {
       "id": "3",
       "name": "Rok Lala",
-      "img": "rok",
+      "img": "male",
       "zdravila": [
           {
             "name": "Morphine",
@@ -61,11 +64,12 @@
             "box_img": "morphine10_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
-            "dose": 1,
+            "dose": "1",
             "form": "capsule",
             "time": ["08:30", "18:30"],
             "frequency": "daily",
-            "additionalRules" : ["s tekočino"]
+            "additionalRules" : ["s tekocino"],
+            "motivation": "proti hudemu glavobolu"
           },
           {
             "name": "Morphine",
@@ -73,11 +77,12 @@
             "box_img": "morphine10_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
-            "dose": 1,
+            "dose": "1",
             "form": "capsule",
             "time": ["13:30", "22:30"],
             "frequency": "daily",
-            "additionalRules" : ["s tekočino"]
+            "additionalRules" : ["s tekocino"],
+            "motivation": "proti bolecinam"
           }
       ]
     }
@@ -85,7 +90,7 @@
   "skrbniki": [
     {
       "id": "a1",
-      "pacienti": ["1", "2", "3"]
+      "pacienti": ["1", "2", "3", "444"]
     },
     {
       "id": "a2",

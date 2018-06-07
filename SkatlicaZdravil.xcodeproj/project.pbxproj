@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D3E6AFAD725E0A1D0FD0012 /* Pods_SkatlicaZdravil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */; };
+		E91E7BA020C931CC006EB573 /* json1.json in Resources */ = {isa = PBXBuildFile; fileRef = E91E7B9F20C931CC006EB573 /* json1.json */; };
+		E91E7BA220C93D38006EB573 /* json2.json in Resources */ = {isa = PBXBuildFile; fileRef = E91E7BA120C93D38006EB573 /* json2.json */; };
 		E93CDDFF20AD60BF00DBFA48 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDDFE20AD60BF00DBFA48 /* ProfileTableViewCell.swift */; };
 		E93CDE0320AD73CA00DBFA48 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0220AD73CA00DBFA48 /* ProfileTableViewController.swift */; };
 		E93CDE0520AD74F300DBFA48 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93CDE0420AD74F300DBFA48 /* Profile.swift */; };
@@ -38,7 +40,10 @@
 		E99631C820B4510F000CFE2A /* DanesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */; };
 		E99631CA20B459E4000CFE2A /* DanesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */; };
 		E999260420C2E04A00DC6177 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999260320C2E04A00DC6177 /* PopupViewController.swift */; };
-		E9F3279F20C68E0F00D570F3 /* APItoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3279E20C68E0F00D570F3 /* APItoData.swift */; };
+		E9AFC2FA20C7E01400070F91 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98BB4D020C55D6200239C9B /* UserNotifications.framework */; };
+		E9AFC2FB20C7E01400070F91 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98BB4D220C55D6200239C9B /* UserNotificationsUI.framework */; };
+		E9AFC2FE20C7E01400070F91 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC2FD20C7E01400070F91 /* NotificationViewController.swift */; };
+		E9AFC30120C7E01400070F91 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9AFC2FF20C7E01400070F91 /* MainInterface.storyboard */; };
 		E9F327C520C6940000D570F3 /* HKGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9F327B120C693EA00D570F3 /* HKGrotesk-Bold.ttf */; };
 		E9F327C620C6940000D570F3 /* HKGrotesk-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9F327B220C693EB00D570F3 /* HKGrotesk-Italic.ttf */; };
 		E9F327C720C6940000D570F3 /* HKGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9F327B320C693EC00D570F3 /* HKGrotesk-Regular.ttf */; };
@@ -78,6 +83,8 @@
 		5CE94114A6A9E21F144D9981 /* Pods_SkatlicaZdravil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkatlicaZdravil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F9402280FDE85E5E5D951A /* Pods-SkatlicaZdravil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkatlicaZdravil.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil.release.xcconfig"; sourceTree = "<group>"; };
 		E3668738CDB428314A18B70E /* Pods-SkatlicaZdravil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkatlicaZdravil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil.debug.xcconfig"; sourceTree = "<group>"; };
+		E91E7B9F20C931CC006EB573 /* json1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json1.json; sourceTree = "<group>"; };
+		E91E7BA120C93D38006EB573 /* json2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json2.json; sourceTree = "<group>"; };
 		E93CDDFE20AD60BF00DBFA48 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E93CDE0220AD73CA00DBFA48 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		E93CDE0420AD74F300DBFA48 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -113,7 +120,10 @@
 		E99631C720B4510F000CFE2A /* DanesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewController.swift; sourceTree = "<group>"; };
 		E99631C920B459E4000CFE2A /* DanesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E999260320C2E04A00DC6177 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		E9F3279E20C68E0F00D570F3 /* APItoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APItoData.swift; sourceTree = "<group>"; };
+		E9AFC2F920C7E01400070F91 /* customNotif.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = customNotif.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9AFC2FD20C7E01400070F91 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		E9AFC30020C7E01400070F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E9AFC30220C7E01400070F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9F327B120C693EA00D570F3 /* HKGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		E9F327B220C693EB00D570F3 /* HKGrotesk-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Italic.ttf"; sourceTree = "<group>"; };
 		E9F327B320C693EC00D570F3 /* HKGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Regular.ttf"; sourceTree = "<group>"; };
@@ -161,6 +171,15 @@
 			files = (
 				E98BB4D320C55D6200239C9B /* UserNotificationsUI.framework in Frameworks */,
 				E98BB4D120C55D6200239C9B /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9AFC2F620C7E01400070F91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9AFC2FB20C7E01400070F91 /* UserNotificationsUI.framework in Frameworks */,
+				E9AFC2FA20C7E01400070F91 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +231,8 @@
 		E93CDE1420AF1E9800DBFA48 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E91E7BA120C93D38006EB573 /* json2.json */,
+				E91E7B9F20C931CC006EB573 /* json1.json */,
 				E9685EE520BDEA16009DA1D7 /* database.json */,
 				E94CAF8A20BC2EE5000D088A /* controlDrug.json */,
 				E94CAF8B20BC2EE5000D088A /* tapering.json */,
@@ -228,6 +249,7 @@
 			children = (
 				E9743A0220A9F9C400784CD9 /* SkatlicaZdravil */,
 				E9743A1720A9F9C600784CD9 /* SkatlicaZdravilTests */,
+				E9AFC2FC20C7E01400070F91 /* customNotif */,
 				E9743A0120A9F9C400784CD9 /* Products */,
 				3B640105DBCE7EBF6412BBF5 /* Pods */,
 				9C12C6A4CE68D9E7C6A7DE93 /* Frameworks */,
@@ -240,6 +262,7 @@
 				E9743A0020A9F9C400784CD9 /* SkatlicaZdravil.app */,
 				E9743A1420A9F9C600784CD9 /* SkatlicaZdravilTests.xctest */,
 				E98BB4CF20C55D6200239C9B /* cusotmNotif.appex */,
+				E9AFC2F920C7E01400070F91 /* customNotif.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,7 +289,6 @@
 				E9685EE320BCC93F009DA1D7 /* AdhViewController.swift */,
 				E999260320C2E04A00DC6177 /* PopupViewController.swift */,
 				E95F20CE20C5F5E3008DB7BA /* idViewController.swift */,
-				E9F3279E20C68E0F00D570F3 /* APItoData.swift */,
 			);
 			path = SkatlicaZdravil;
 			sourceTree = "<group>";
@@ -278,6 +300,16 @@
 				E9743A1A20A9F9C600784CD9 /* Info.plist */,
 			);
 			path = SkatlicaZdravilTests;
+			sourceTree = "<group>";
+		};
+		E9AFC2FC20C7E01400070F91 /* customNotif */ = {
+			isa = PBXGroup;
+			children = (
+				E9AFC2FD20C7E01400070F91 /* NotificationViewController.swift */,
+				E9AFC2FF20C7E01400070F91 /* MainInterface.storyboard */,
+				E9AFC30220C7E01400070F91 /* Info.plist */,
+			);
+			path = customNotif;
 			sourceTree = "<group>";
 		};
 		E9F327A020C693BE00D570F3 /* fonts */ = {
@@ -364,13 +396,30 @@
 			productReference = E98BB4CF20C55D6200239C9B /* cusotmNotif.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E9AFC2F820C7E01400070F91 /* customNotif */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9AFC30820C7E01400070F91 /* Build configuration list for PBXNativeTarget "customNotif" */;
+			buildPhases = (
+				E9AFC2F520C7E01400070F91 /* Sources */,
+				E9AFC2F620C7E01400070F91 /* Frameworks */,
+				E9AFC2F720C7E01400070F91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = customNotif;
+			productName = customNotif;
+			productReference = E9AFC2F920C7E01400070F91 /* customNotif.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E97439F820A9F9C400784CD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Neza;
 				TargetAttributes = {
@@ -383,6 +432,9 @@
 					};
 					E98BB4CE20C55D6200239C9B = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					E9AFC2F820C7E01400070F91 = {
+						CreatedOnToolsVersion = 9.4;
 					};
 				};
 			};
@@ -402,6 +454,7 @@
 				E97439FF20A9F9C400784CD9 /* SkatlicaZdravil */,
 				E9743A1320A9F9C600784CD9 /* SkatlicaZdravilTests */,
 				E98BB4CE20C55D6200239C9B /* cusotmNotif */,
+				E9AFC2F820C7E01400070F91 /* customNotif */,
 			);
 		};
 /* End PBXProject section */
@@ -411,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91E7BA220C93D38006EB573 /* json2.json in Resources */,
 				E94CAF8D20BC2EE5000D088A /* controlDrug.json in Resources */,
 				E9F327D620C6940000D570F3 /* HKGrotesk-MediumLegacyItalic.ttf in Resources */,
 				E9F327CE20C6940000D570F3 /* HKGrotesk-MediumItalic.ttf in Resources */,
@@ -438,6 +492,7 @@
 				E9F327D720C6940000D570F3 /* HKGrotesk-SemiBold.ttf in Resources */,
 				E9F327D520C6940000D570F3 /* HKGrotesk-LightLegacyItalic.ttf in Resources */,
 				E94CAF8820BC2584000D088A /* simple.json in Resources */,
+				E91E7BA020C931CC006EB573 /* json1.json in Resources */,
 				E9685EE620BDEA16009DA1D7 /* database.json in Resources */,
 				E94CAF8E20BC2EE5000D088A /* tapering.json in Resources */,
 			);
@@ -457,6 +512,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9AFC2F720C7E01400070F91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9AFC30120C7E01400070F91 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -467,10 +530,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkatlicaZdravil/Pods-SkatlicaZdravil-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHTTP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,7 +585,6 @@
 				E9685EE420BCC93F009DA1D7 /* AdhViewController.swift in Sources */,
 				E9FFCF2A20B5604700EDCA23 /* UIView.swift in Sources */,
 				E999260420C2E04A00DC6177 /* PopupViewController.swift in Sources */,
-				E9F3279F20C68E0F00D570F3 /* APItoData.swift in Sources */,
 				E93CDE0720ADA60800DBFA48 /* ZdraviloTableViewCell.swift in Sources */,
 				E93CDE1120AF159400DBFA48 /* PagesViewController.swift in Sources */,
 				E9FFCF2C20B5615600EDCA23 /* HeaderCollectionReusableView.swift in Sources */,
@@ -540,6 +604,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9AFC2F520C7E01400070F91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9AFC2FE20C7E01400070F91 /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +640,14 @@
 				E9743A0D20A9F9C600784CD9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E9AFC2FF20C7E01400070F91 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9AFC30020C7E01400070F91 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -805,6 +885,46 @@
 			};
 			name = Release;
 		};
+		E9AFC30620C7E01400070F91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = customNotif/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil.customNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9AFC30720C7E01400070F91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25XAC893UN;
+				INFOPLIST_FILE = customNotif/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.neza.SkatlicaZdravil.customNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -840,6 +960,15 @@
 			buildConfigurations = (
 				E98BB4DF20C55D6200239C9B /* Debug */,
 				E98BB4E020C55D6200239C9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9AFC30820C7E01400070F91 /* Build configuration list for PBXNativeTarget "customNotif" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9AFC30620C7E01400070F91 /* Debug */,
+				E9AFC30720C7E01400070F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

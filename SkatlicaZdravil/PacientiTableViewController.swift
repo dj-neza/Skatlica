@@ -51,7 +51,6 @@ class PacientiTableViewController: UITableViewController {
     //MARK: Private Methods
     private func loadPeople() {
         let userId = usersData.value(forKey: "controlId") as? String
-        print(userId)
         let dataPath = Bundle.main.url(forResource: "database", withExtension: "json")
         do {
             let database = try Data(contentsOf: dataPath!)
@@ -101,8 +100,6 @@ class PacientiTableViewController: UITableViewController {
         usersData.set(encodedData, forKey: idd)
         usersData.set(takenBase, forKey: idd2)
         usersData.synchronize()
-        print(zdravila)
-        print(zdravilaUD)
         let result = People(name: data["name"].stringValue, img: data["img"].stringValue, patientId: data["id"].stringValue, zdravila: zdravila)
         return result!
     }
@@ -115,7 +112,7 @@ class PacientiTableViewController: UITableViewController {
         for (_, o2) in data["additionalRules"] {
             additional.append(o2.stringValue)
         }
-        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
+        let result = Zdravilo(id: ind, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].stringValue, form: data["form"].stringValue, time: time, frequency: data["frequency"].stringValue, additionalRules: additional)
         return result
     }
     func dataToZdravilo2(data: JSON, ind: Int) -> Int {
@@ -125,7 +122,7 @@ class PacientiTableViewController: UITableViewController {
             additional.append(o2.stringValue)
         }
         for (_, o) in data["time"] {
-            let zdravilo = Zdravilo(id: indeeks, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].floatValue, form: data["form"].stringValue, time: [o.stringValue], frequency: data["frequency"].stringValue, additionalRules: additional)
+            let zdravilo = Zdravilo(id: indeeks, name: data["name"].stringValue, pill_img: data["pill_img"].stringValue, box_img: data["box_img"].stringValue, startDate: data["startDate"].stringValue, endDate: data["endDate"].stringValue, dose: data["dose"].stringValue, form: data["form"].stringValue, time: [o.stringValue], frequency: data["frequency"].stringValue, additionalRules: additional)
             indeeks = indeeks + 1
             self.zdravilaUD.append(zdravilo)
         }

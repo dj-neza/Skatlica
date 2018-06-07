@@ -28,7 +28,7 @@ class Zdravilo: NSObject, NSCopying, NSCoding {
         let pill_img = aDecoder.decodeObject(forKey: "pill_img") as! String
         let box_img = aDecoder.decodeObject(forKey: "box_img") as! String
         let lasting = aDecoder.decodeObject(forKey: "lasting") as! DateInterval
-        let dose = aDecoder.decodeFloat(forKey: "dose")
+        let dose = aDecoder.decodeObject(forKey: "dose") as! String
         let form = aDecoder.decodeObject(forKey: "form") as! String
         let time = aDecoder.decodeObject(forKey: "time") as! [Date]
         let frequency = aDecoder.decodeObject(forKey: "frequency") as! String
@@ -60,14 +60,14 @@ class Zdravilo: NSObject, NSCopying, NSCoding {
     var pill_img: String
     var box_img: String
     var lasting: DateInterval
-    var dose: Float
+    var dose: String
     var form: String
     var time: [Date]
     var frequency: String
     var additionalRules: [String]
     
     //MARK: Initialization
-    init(id: Int, name: String, pill_img: String, box_img: String, startDate: String, endDate: String, dose: Float, form: String, time: [String], frequency: String, additionalRules: [String] = []) {
+    init(id: Int, name: String, pill_img: String, box_img: String, startDate: String, endDate: String, dose: String, form: String, time: [String], frequency: String, additionalRules: [String] = []) {
         /*guard !label.isEmpty else {
             return nil
         }*/
@@ -96,7 +96,7 @@ class Zdravilo: NSObject, NSCopying, NSCoding {
         self.additionalRules = additionalRules
     }
     
-    init(id: Int, name: String, pill_img: String, box_img: String, lasting: DateInterval, dose: Float, form: String, time: [Date], frequency: String, additionalRules: [String] = []) {
+    init(id: Int, name: String, pill_img: String, box_img: String, lasting: DateInterval, dose: String, form: String, time: [Date], frequency: String, additionalRules: [String] = []) {
         
         self.id = id
         self.name = name

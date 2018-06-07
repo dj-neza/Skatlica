@@ -36,7 +36,7 @@ class AdhViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let taken = usersData.value(forKey: "taken") as? [String: Bool]
+        let taken = usersData.value(forKey: takenId!) as? [String: Bool] //"taken") as? [String: Bool]
         let decoded  = usersData.object(forKey: zdravilaId!) as! Data
         zdravila = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
         let currentTime = Date()

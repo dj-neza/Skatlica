@@ -39,6 +39,9 @@ final class DanesCollectionViewController: UICollectionViewController {
         let decoded  = usersData.object(forKey: "zdravila") as! Data
         zdravila = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Zdravilo]
     }
+    /*override func viewDidAppear(_ animated: Bool) {
+        self.collectionView?.reloadData()
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -134,11 +137,20 @@ extension DanesCollectionViewController {
             default:
                 result = vecer!.count
             }
+            if (result == 0) {
+                self.collectionView?.setEmptyMessage("V tem delu dneva nimaš več zdravil.")
+            }
+            else {
+                self.collectionView?.restore()
+            }
         }
         else {
             if (open == true) {
                 let overdue = usersData.value(forKey: "overdue") as? [Int]
                 result = overdue!.count
+                if (result != 0) {
+                    self.collectionView?.restore()
+                }
             }
             else {
                 result = 0
@@ -189,6 +201,7 @@ extension DanesCollectionViewController {
             let zdravilo = zdraviloForIndexPath(indexPath)
             cell.pill_image.image = UIImage(named: zdravilo.pill_img)
             cell.pill_name.text = zdravilo.name
+            //cell.pill_name.adjustsFontSizeToFitWidth = true
         }
         else {
             if (indexPath.section == 1) {
@@ -196,12 +209,14 @@ extension DanesCollectionViewController {
                 cell.pill_image.image = UIImage(named: zdravilo.pill_img)
                 cell.pill_name.text = zdravilo.name
                 cell.backgroundColor = UIColor(red:1.00, green:0.83, blue:0.07, alpha:0.75)
+                //cell.pill_name.adjustsFontSizeToFitWidth = true
             }
             else {
                 let zdravilo = zdraviloForIndexPath(indexPath)
                 cell.pill_image.image = UIImage(named: zdravilo.pill_img)
                 cell.pill_name.text = zdravilo.name
                 cell.backgroundColor = UIColor.white
+                //cell.pill_name.adjustsFontSizeToFitWidth = true
             }
         }
         return cell
@@ -263,6 +278,25 @@ extension DanesCollectionViewController : UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.size.width, height: 50)
         }
     }*/
+}
+
+extension UICollectionView {
+    
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: "HKGrotesk", size: 60)
+        messageLabel.sizeToFit()
+        
+        self.backgroundView = messageLabel;
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+    }
 }
 
 

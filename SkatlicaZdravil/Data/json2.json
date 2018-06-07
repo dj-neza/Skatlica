@@ -1,0 +1,235 @@
+{
+  "items": [
+    {
+      "id": "75197001-7e85-4552-8a40-6f98435204bd|Medication instruction",
+      "prescription": {
+        "display": "Paracetamol 125mg suppositories - 250 mg - 2X per day - When needed - Rectal",
+        "medication": {
+          "id": "17005",
+          "name": "Paracetamol 125mg suppositories",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Rectal",
+          "items": [
+            {
+              "name": "Rectal"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "250 mg",
+              "quantity": null,
+              "timing": null
+            }
+          ]
+        },
+        "doseForm": {
+          "name": "Suppository"
+        },
+        "timingDirections": {
+          "display": "2X per day - When needed"
+        },
+        "comment": null,
+        "indication": {
+          "display": "In pain"
+        },
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": null,
+        "quantities": null,
+        "additionalData": []
+      },
+      "status": "UNCHANGED",
+      "statusReason": null
+    },
+    {
+      "id": "984c3dec-8968-42e4-a6c9-4fdd98db03a5|Medication instruction",
+      "prescription": {
+        "display": "Ibuprofen - 300 mg - 2X per day - Oral",
+        "medication": {
+          "id": "1379",
+          "name": "Ibuprofen",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "300 mg",
+              "quantity": null,
+              "timing": null
+            }
+          ]
+        },
+        "doseForm": null,
+        "timingDirections": {
+          "display": "2X per day"
+        },
+        "comment": null,
+        "indication": null,
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": null,
+        "quantities": null,
+        "additionalData": []
+      },
+      "status": "NEW",
+      "statusReason": null
+    },
+    {
+      "id": "f8fa3c98-85b9-4e36-83ef-1842c353dd10|Medication instruction",
+      "prescription": {
+        "display": "Morphine 10mg tablets - 20 mg - 3X per day - Oral",
+        "medication": {
+          "id": "15864",
+          "name": "Morphine 10mg tablets",
+          "controlledDrug": true
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "20 mg",
+              "quantity": null,
+              "timing": null
+            }
+          ]
+        },
+        "doseForm": {
+          "name": "Tablet"
+        },
+        "timingDirections": {
+          "display": "3X per day"
+        },
+        "comment": null,
+        "indication": {
+          "display": "In pain"
+        },
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": null,
+        "quantities": null,
+        "additionalData": []
+      },
+      "status": "CHANGED",
+      "statusReason": {
+        "display": "Other"
+      }
+    },
+    {
+      "id": "ed644533-6d7d-4cb4-9f0a-69cb05797233|Medication instruction",
+      "prescription": {
+        "display": "Aspirin - 1000 mg - 3X per day - Cutaneous",
+        "medication": {
+          "id": "194",
+          "name": "Aspirin",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Cutaneous",
+          "items": [
+            {
+              "name": "Cutaneous"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "1000 mg",
+              "quantity": null,
+              "timing": null
+            }
+          ]
+        },
+        "doseForm": null,
+        "timingDirections": {
+          "display": "3X per day"
+        },
+        "comment": null,
+        "indication": null,
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": null,
+        "quantities": null,
+        "additionalData": []
+      },
+      "status": "CHANGED",
+      "statusReason": {
+        "display": "Changed dose"
+      }
+    },
+    {
+      "id": "8490af9b-2717-4542-acd1-964a7c25bd8e|Medication instruction",
+      "prescription": {
+        "display": "Medocodene 30mg/500mg effervescent tablets (Mylan) - 1 tablet - 2X per day - Oral",
+        "medication": {
+          "id": "103880",
+          "name": "Medocodene 30mg/500mg effervescent tablets (Mylan)",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "1 tablet",
+              "quantity": null,
+              "timing": null
+            }
+          ]
+        },
+        "doseForm": {
+          "name": "Effervescent tablet"
+        },
+        "timingDirections": {
+          "display": "2X per day"
+        },
+        "comment": null,
+        "indication": null,
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": null,
+        "quantities": null,
+        "additionalData": []
+      },
+      "status": "STOPPED",
+      "statusReason": {
+        "display": "Inadequate clinical response"
+      }
+    }
+  ]
+}

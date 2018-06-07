@@ -42,7 +42,7 @@ class NavodilaViewController: UIViewController {
         
         self.pill_name.text = zdravilo?.name
         self.pill_dates.text = start + " - " + end
-        self.dose_unit.text = String(format: "%.2f", (zdravilo?.dose)!) + " " + (zdravilo?.form)!
+        self.dose_unit.text = (zdravilo?.dose)! + " " + (zdravilo?.form)!
         self.frequency.text = zdravilo?.frequency
         self.pill_time.text = arrayToString(additional: timeStr)
         self.additionalRules.text = arrayToString(additional: (zdravilo?.additionalRules)!)
@@ -77,7 +77,7 @@ class NavodilaViewController: UIViewController {
     @IBAction func takePill(_ sender: Any) {
         let usersData:UserDefaults = UserDefaults.standard
         var taken = usersData.value(forKey: "taken") as? [String: Bool]
-        var overdue = usersData.value(forKey: "overdue") as? [Int]
+        let overdue = usersData.value(forKey: "overdue") as? [Int]
         let jutro = usersData.value(forKey: "jutro") as? [Int]
         let dopoldne = usersData.value(forKey: "dopoldne") as? [Int]
         let popoldne = usersData.value(forKey: "popoldne") as? [Int]
