@@ -167,12 +167,13 @@ extension DanesCollectionViewController {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
             if (indexPath.section == 0) {
-                headerView.imaag.image = UIImage(named: "question")
+                headerView.imaag.isHidden = true
                 headerView.headerButton.setTitle("Za navodila klikni zdravilo", for: .normal)
                 headerView.headerButton.setTitle("Za navodila klikni zdravilo", for: .highlighted)
                 headerView.backgroundColor = UIColor.white
             }
             else {
+                headerView.imaag.isHidden = false
                 headerView.backgroundColor = UIColor(red:0.69, green:0.85, blue:0.92, alpha:1.0)
                 if (collectionView.numberOfItems(inSection: indexPath.section) != 0) {
                     headerView.imaag.image = UIImage(named: "up")
