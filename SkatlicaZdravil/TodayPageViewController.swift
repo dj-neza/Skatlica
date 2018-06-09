@@ -50,6 +50,12 @@ class TodayPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let font = UIFont.systemFont(ofSize: 25)
+        nazajButt.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
+        naprejButt.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
+        self.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
+        
+        
         orderedViewControllers = redoControllers()
         let currentTime = Date()
         let hour = calendar.component(.hour, from: currentTime)

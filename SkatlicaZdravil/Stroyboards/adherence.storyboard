@@ -716,10 +716,10 @@
             </objects>
             <point key="canvasLocation" x="3929" y="847"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation-->
         <scene sceneID="vJb-BX-Qcq">
             <objects>
-                <navigationController storyboardIdentifier="navi" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="oPZ-7S-vOr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navi" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="oPZ-7S-vOr" customClass="navigation" customModule="SkatlicaZdravil" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Dn4-Q3-RdA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

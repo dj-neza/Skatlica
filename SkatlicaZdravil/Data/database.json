@@ -7,17 +7,30 @@
       "zdravila": [
           {
             "name": "Paracetamol",
-            "pill_img": "paracetamol_pill",
-            "box_img": "paracetamol_box",
+            "pill_img": "paracetamol500_pill",
+            "box_img": "paracetamol500_box",
             "startDate": "28.5.2018",
             "endDate": "28.6.2018",
             "dose": "1x",
             "form": "50mg tablet",
-            "time": ["08:00", "12:15", "17:40"],
+            "time": ["10:00", "12:15", "17:40"],
             "frequency": "dnevno",
             "additionalRules" : ["na prazen želodec", "pred obrokom"],
             "motivation": "za glavobol in vrocino"
-          }
+          },
+           {
+           "name": "Aspirin",
+           "pill_img": "aspirin_pill",
+           "box_img": "aspirin_box",
+           "startDate": "28.5.2018",
+           "endDate": "28.6.2018",
+           "dose": "1x",
+           "form": "50mg tablet",
+           "time": ["10:00", "12:15", "17:40"],
+           "frequency": "dnevno",
+           "additionalRules" : ["na prazen želodec", "pred obrokom"],
+           "motivation": "za glavobol in vrocino"
+           }
       ]
     },
     {
